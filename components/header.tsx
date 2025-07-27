@@ -71,8 +71,8 @@ export function HeaderDesktop() {
               <Link
                 key={href}
                 href={href}
-                className={`text-xs font-light tracking-[0.15em] transition-colors uppercase ${
-                  isActive(href) ? "text-black" : "hover:text-gray-600"
+                className={`navlink text-xs font-light tracking-[0.15em] transition-colors uppercase ${
+                  isActive(href) ? "text-black active" : "hover:text-gray-600"
                 }`}
               >
                 {label}
@@ -84,7 +84,7 @@ export function HeaderDesktop() {
             <select
               value={lang}
               onChange={e => setLang(e.target.value)}
-              className="px-2 py-1 text-sm font-light bg-transparent"
+              className="px-2 py-1 text-xs font-light bg-transparent"
               aria-label="Choix de la langue"
             >
               <option value="fr">FR</option>
@@ -140,7 +140,7 @@ export function HeaderMobile() {
           <select
             value={lang}
             onChange={e => setLang(e.target.value)}
-            className="px-2 py-1 text-sm font-light bg-white"
+            className="px-2 py-1 text-xs font-light bg-white"
             aria-label="Choix de la langue"
           >
             <option value="fr">FR</option>
@@ -156,7 +156,7 @@ export function HeaderMobile() {
         <>
           <div className="fixed inset-0 z-40 h-screen w-screen bg-gray-50/50 backdrop-blur-xl" onClick={() => setOpen(false)} />
           <div className="fixed top-0 right-0 w-3/4 h-screen z-50 bg-white p-6 flex flex-col gap-6 transition-transform duration-300">
-            <nav className="flex flex-col space-y-5 text-sm uppercase font-light tracking-[0.15em]">
+            <nav className="flex flex-col space-y-5 text-xs uppercase font-light tracking-[0.15em]">
               {[
                 ["/", "Couverture"],
                 ["/collections", "Collections"],
