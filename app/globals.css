@@ -248,8 +248,3 @@ header.invert a, header.invert button {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
-
-/* GSAP ELEMENT */
-.gsap-element {
-  visibility: hidden;
-}

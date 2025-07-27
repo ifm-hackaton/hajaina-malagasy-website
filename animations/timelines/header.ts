@@ -1,7 +1,7 @@
-import { gsap } from "../config";
+import configuredGsap from "../config";
 
 export const createHeaderTimeline = (pathname: string) => {
-    const tl = gsap.timeline();
+    const tl = configuredGsap.timeline();
     
     if (pathname === "/") {
         tl.from(".header", {
@@ -10,6 +10,11 @@ export const createHeaderTimeline = (pathname: string) => {
             ease: "power2.out",
             duration: 0.8,
             delay: 0.4,
+        });
+    } else {
+        tl.from(".header", {
+            autoAlpha: 0,
+            duration: 0
         });
     }
 };

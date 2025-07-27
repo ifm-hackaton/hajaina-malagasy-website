@@ -1,7 +1,7 @@
-import { gsap } from "../config";
+import configuredGsap from "../config";
 
 const animateCollectionsSection = () => {
-  gsap.from(".collections-section h2, .collections-section .separator, .collections-section p, .collections-section .w-full", {
+  configuredGsap.from(".collections-section h2, .collections-section .separator, .collections-section p, .collections-section .w-full", {
     scrollTrigger: {
       trigger: ".collections-section",
       start: "top 80%",

@@ -11,8 +11,11 @@ import Link from "next/link"
 import Header from "@/components/header"
 import Footer from "@/components/footer"
 import CustomCursor from '@/components/custom-cursor'
+import { useAnimation } from "@/animations"
 
 export default function HajAinaFashion() {
+  useAnimation(["heroSection", "collectionSection"]);
+  
   const [currentSlide, setCurrentSlide] = useState(0)
   const featuredDesigners = [
     {
@@ -111,7 +114,7 @@ export default function HajAinaFashion() {
       <section className="relative min-h-[115vh] py-10 flex items-center justify-center overflow-hidden bg-[#0b0b0b]">
         {/* Hero Image Left */}
         <div className="absolute inset-0 md:inset-y-0 md:left-0 md:w-[45%] h-full z-10 overflow-hidden">
-          <div className="hero-image gsap-element relative w-full h-full">
+          <div className="hero-image invisible relative w-full h-full">
             <Image
               src="/img/hero-image.jpg"
               alt="Hero Fashion"
@@ -125,23 +128,23 @@ export default function HajAinaFashion() {
 
         {/* Hero Text Content */}
         <div className="relative z-20 text-white px-6 md:px-12 lg:px-20 max-w-3xl md:ml-[45%] text-center md:text-left">
-          <h1 className="hero-title gsap-element text-4xl sm:text-5xl md:text-8xl font-extralight tracking-[0.2em] mb-10 serif-font">
+          <h1 className="hero-title invisible text-4xl sm:text-5xl md:text-8xl font-extralight tracking-[0.2em] mb-10 serif-font">
             HAJ'AINA
           </h1>
-          <div className="hero-subtext gsap-element flex items-center mb-10 gap-3">
+          <div className="hero-subtext invisible flex items-center mb-10 gap-3">
             <p className="text-lg md:text-lg font-light tracking-[0.05em] opacity-90">
               Mihaja, Manaja Aina... Manaja Tantara
             </p> 
             <Image src="/img/madagascar.png" alt="" width="20" height="0" className="mt-1"/>
           </div>
-          <p className="hero-description gsap-element text-base md:text-lg mb-10 leading-relaxed font-light opacity-80">
+          <p className="hero-description invisible text-base md:text-lg mb-10 leading-relaxed font-light opacity-80">
             Découvrez les créateurs visionnaires qui façonnent l'avenir de la mode éthique à Madagascar, où tradition et
             innovation se rencontrent dans une harmonie parfaite.
           </p>
           <Link href="/collections">
             <Button
               size="lg"
-              className="hero-button gsap-element bg-green-600 text-black hover:bg-green-100 text-xs tracking-[0.15em] px-8 py-4 font-normal uppercase"
+              className="hero-button invisible bg-green-600 text-black hover:bg-green-100 text-xs tracking-[0.15em] px-8 py-4 font-normal uppercase"
             >
               Explorer les Collections
               <ArrowRight className="ml-3 h-4 w-4" />

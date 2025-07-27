@@ -1,19 +1,10 @@
-import { useEffect, useState } from "react";
 import { useGSAP } from "@gsap/react";
+import { useAnimationHook } from "./hook";
 import { usePathname } from "next/navigation";
-import { loadTimelines } from "./config";
 
-export const useAnimation = () => {
-    const [timelines, setTimelines] = useState<any[]>([]);
+export const useAnimation = (namespaces:string[]) => {
+    const { timelines } = useAnimationHook(namespaces);
     const pathname = usePathname();
-
-    useEffect(() => {
-        let mounted = true;
-        loadTimelines().then((loaded) => {
-            if (mounted) setTimelines(loaded);
-        });
-        return () => { mounted = false; };
-    }, []);
 
     useGSAP(() => {
         timelines.forEach(createTimeline => {

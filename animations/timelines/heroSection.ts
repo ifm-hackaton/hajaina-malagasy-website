@@ -1,8 +1,8 @@
-import { gsap } from "../config";
+import configuredGsap from "../config";
 
 export const createHeroTimeline = () => {
-    const tl = gsap.timeline();
-    const tl2 = gsap.timeline({ defaults: { ease: "power2.out" } });
+    const tl = configuredGsap.timeline();
+    const tl2 = configuredGsap.timeline({ defaults: { ease: "power2.out" } });
 
     tl.from(".hero-image", {
         scale: 0.8,

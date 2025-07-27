@@ -1,5 +1,5 @@
-export const TIMELINEFILES = [
+export const DEFAULT_NAMESPACES = [
   "header",
   "heroSection",
-  "collectionSection",
+  "collectionSection"
 ];

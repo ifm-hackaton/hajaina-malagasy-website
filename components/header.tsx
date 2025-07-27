@@ -45,10 +45,11 @@ function useHeaderState() {
 
 export function HeaderDesktop() {
   const { isLoggedIn, isActive, handleLogout, shouldInvert } = useHeaderState()
+  const [lang, setLang] = useState("fr")
 
   return (
     <header
-      className={`header hidden md:block fixed top-0 w-full bg-white/95 backdrop-blur-sm z-50 border-b border-gray-100 ${
+      className={`header invisible hidden md:block fixed top-0 w-full bg-white/95 backdrop-blur-sm z-50 border-b border-gray-100 ${
         shouldInvert ? "invert" : ""
       }`}
     >
@@ -80,6 +81,15 @@ export function HeaderDesktop() {
           </nav>
 
           <div className="flex items-center space-x-4">
+            <select
+              value={lang}
+              onChange={e => setLang(e.target.value)}
+              className="px-2 py-1 text-sm font-light bg-transparent"
+              aria-label="Choix de la langue"
+            >
+              <option value="fr">FR</option>
+              <option value="mg">MG</option>
+            </select>
             {isLoggedIn ? (
               <>
                 <Link href="/dashboard">
@@ -114,10 +124,11 @@ export function HeaderDesktop() {
 export function HeaderMobile() {
   const { isLoggedIn, isActive, handleLogout, shouldInvert } = useHeaderState()
   const [open, setOpen] = useState(false)
+  const [lang, setLang] = useState("fr")
 
   return (
     <header
-      className={`header block md:hidden fixed top-0 w-full z-50 border-b border-gray-100 ${
+      className={`header invisible block md:hidden fixed top-0 w-full z-50 border-b border-gray-100 ${
         shouldInvert ? "invert bg-white backdrop-blur-sm" : "bg-white backdrop-blur-sm"
       }`}
     >
@@ -125,9 +136,20 @@ export function HeaderMobile() {
         <Link href="/" className="text-xl font-light tracking-[0.2em] serif-font">
           <img src="/logo-transparent.png" alt="Haj'Aina" className="h-[36px]" />
         </Link>
-        <button onClick={() => setOpen(!open)} aria-label="Toggle Menu">
-          {open ? <X size={26} /> : <Menu size={26} />}
-        </button>
+        <div className="flex items-center gap-2">
+          <select
+            value={lang}
+            onChange={e => setLang(e.target.value)}
+            className="px-2 py-1 text-sm font-light bg-white"
+            aria-label="Choix de la langue"
+          >
+            <option value="fr">FR</option>
+            <option value="mg">MG</option>
+          </select>
+          <button onClick={() => setOpen(!open)} aria-label="Toggle Menu">
+            {open ? <X size={26} /> : <Menu size={26} />}
+          </button>
+        </div>
       </div>
 
       {open && (
@@ -190,6 +212,8 @@ export function HeaderMobile() {
 }
 
 export default function Header() {
+  useAnimation(["header"]);
+
   return (
     <>
       <HeaderDesktop />
