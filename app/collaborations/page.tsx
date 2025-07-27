@@ -19,7 +19,7 @@ export default function CollaborationsPage() {
       status: "En cours",
       dueDate: "30/08/2024",
       description: "Développement de tissus innovants à partir de fibres recyclées pour la nouvelle collection.",
-      image: "/placeholder.jpg?height=200&width=300&query=eco%20textile%20innovation",
+      image: "/img/collab2.jpg",
     },
     {
       id: "2",
@@ -28,7 +28,7 @@ export default function CollaborationsPage() {
       status: "En cours",
       dueDate: "15/09/2024",
       description: "Création de contenu pour les réseaux sociaux axé sur la mode durable.",
-      image: "/placeholder.jpg?height=200&width=300&query=digital%20marketing%20campaign",
+      image: "/img/collab3.jpg",
     },
   ]
 
@@ -38,14 +38,14 @@ export default function CollaborationsPage() {
       sender: "Atelier Couture Durable",
       message: "Proposition de collaboration pour une ligne de vêtements upcyclés.",
       date: "20/07/2024",
-      senderImage: "/placeholder-user.jpg?height=50&width=50&query=designer%20profile",
+      senderImage: "/img/Lalaina.jpg",
     },
     {
       id: "req2",
       sender: "Photographe Éthique",
       message: "Demande de partenariat pour un shooting photo sur le thème de la nature.",
       date: "18/07/2024",
-      senderImage: "/placeholder-user.jpg?height=50&width=50&query=photographer%20profile",
+      senderImage: "/img/Hery.jpg",
     },
   ]
 
@@ -59,7 +59,7 @@ export default function CollaborationsPage() {
       contactEmail: "contact@modecirculaire.com",
       location: "Paris, France",
       type: "Création",
-      companyLogo: "/placeholder.svg?height=80&width=80",
+      companyLogo: "/img/Miora.jpg",
     },
     {
       id: "ann2",
@@ -70,7 +70,7 @@ export default function CollaborationsPage() {
       contactEmail: "info@futurefibreslab.org",
       location: "Lyon, France",
       type: "Recherche & Développement",
-      companyLogo: "/placeholder-logo.png?height=80&width=80&query=future%20fibres%20logo",
+      companyLogo: "/img/Collab2.jpg",
     },
     {
       id: "ann3",
@@ -81,7 +81,7 @@ export default function CollaborationsPage() {
       contactEmail: "collab@conscienceetstyle.fr",
       location: "En ligne / Europe",
       type: "Marketing & Influence",
-      companyLogo: "/placeholder.svg?height=80&width=80",
+      companyLogo: "/img/Collab3.jpg",
     },
   ]
 

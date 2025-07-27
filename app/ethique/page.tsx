@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { Leaf, Users, Globe, Sparkles, Award } from "lucide-react" // Added Sparkles and Award icons
+import { Leaf, Users, Globe, Sparkles, Award, BadgeCheck, ShieldCheck, Gem } from "lucide-react" // Ajout des icônes pour certifications
 import Image from "next/image"
 import Header from "@/components/header"
 import { Badge } from "@/components/ui/badge" // Import Badge
@@ -38,17 +38,17 @@ export default function EthiquePage() {
     {
       name: "Fair Trade Certified",
       description: "Certification commerce équitable internationale",
-      image: "/placeholder.svg?height=100&width=100&text=Fair+Trade+Logo",
+      icon: BadgeCheck,
     },
     {
       name: "GOTS Organic",
       description: "Global Organic Textile Standard",
-      image: "/placeholder.svg?height=100&width=100&text=GOTS+Organic+Logo",
+      icon: ShieldCheck,
     },
     {
       name: "B-Corp Certified",
       description: "Entreprise à impact social et environnemental",
-      image: "/placeholder.svg?height=100&width=100&text=B+Corp+Logo",
+      icon: Gem,
     },
   ]
 
@@ -80,7 +80,7 @@ export default function EthiquePage() {
       id: 1,
       title: "Les Secrets de la Soie Sauvage Malgache",
       excerpt: "Découvrez le processus de production de notre soie sauvage, de la chenille au tissu luxueux.",
-      image: "/placeholder.svg?height=400&width=600&text=Wild+silk+production+Madagascar",
+      image: "/img/Collab1.jpg",
       author: "Miora Rasoanaivo",
       date: "10 Mai 2024",
       badges: ["Artisanat", "Naturel", "Local"],
@@ -89,7 +89,7 @@ export default function EthiquePage() {
       id: 2,
       title: "L'Upcycling : Quand la Mode Devient Art",
       excerpt: "Comment nos stylistes transforment des vêtements usagés en pièces uniques et tendance.",
-      image: "/placeholder.svg?height=400&width=600&text=Upcycling+fashion+art+workshop",
+      image: "/img/Collection2.jpg",
       author: "Hery Andriantsoa",
       date: "22 Avril 2024",
       badges: ["Recyclage", "Créativité", "Zéro Déchet"],
@@ -98,7 +98,7 @@ export default function EthiquePage() {
       id: 3,
       title: "Madagascar Urbain : L'Inspiration Streetwear",
       excerpt: "Plongez dans l'énergie des rues d'Antananarivo qui nourrit nos collections streetwear éthiques.",
-      image: "/placeholder.svg?height=400&width=600&text=Urban+Madagascar+streetwear+inspiration",
+      image: "/img/Miora.jpg",
       author: "Lalaina Rakoto",
       date: "05 Mars 2024",
       badges: ["Urbain", "Jeunesse", "Culture"],
@@ -111,9 +111,9 @@ export default function EthiquePage() {
       <Header />
       {/* Hero Section */}
       <section className="relative py-32 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/30 z-10" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 to-black/20 z-10" />
         <Image
-          src="/img/Ethique.jpg"
+          src="/img/ethique-image.jpg"
           alt="Mode Éthique"
           fill
           className="object-cover"
@@ -211,13 +211,7 @@ export default function EthiquePage() {
               >
                 <CardContent className="p-8">
                   <div className="w-24 h-24 mx-auto mb-6 bg-gray-100 rounded-full flex items-center justify-center">
-                    <Image
-                      src={cert.image || "/placeholder.svg"}
-                      alt={cert.name}
-                      width={60}
-                      height={60}
-                      className="object-contain"
-                    />
+                    <cert.icon className="h-12 w-12 text-black" />
                   </div>
                   <h3 className="text-xl font-light mb-3 serif-font tracking-wide">{cert.name}</h3>
                   <p className="text-gray-600 font-light leading-relaxed">{cert.description}</p>

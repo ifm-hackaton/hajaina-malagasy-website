@@ -57,20 +57,20 @@ export default function RecyclagePage() {
 
   const transformations = [
     {
-      before: "/placeholder.svg?height=300&width=300&text=Old+dress+before+transformation",
-      after: "/placeholder.svg?height=300&width=300&text=Transformed+modern+dress",
+      before: "/img/before1.jpg",
+      after: "/img/after1.jpg",
       title: "Robe Vintage → Création Moderne",
       description: "Transformation d'une robe vintage en pièce contemporaine avec ajout de détails brodés.",
     },
     {
-      before: "/placeholder.svg?height=300&width=300&text=Old+jeans+before+upcycling",
-      after: "/placeholder.svg?height=300&width=300&text=Upcycled+denim+jacket",
+      before: "/img/before2.jpg",
+      after: "/img/after2.jpg",
       title: "Jean Usé → Veste Tendance",
       description: "Upcycling d'un jean abîmé en veste denim avec applications textiles traditionnelles.",
     },
     {
-      before: "/placeholder.svg?height=300&width=300&text=Old+shirt+before+redesign",
-      after: "/placeholder.svg?height=300&width=300&text=Redesigned+elegant+blouse",
+      before: "/img/before3.jpg",
+      after: "/img/after3.jpg",
       title: "Chemise → Blouse Élégante",
       description: "Redesign complet avec ajout de détails en soie sauvage malgache.",
     },

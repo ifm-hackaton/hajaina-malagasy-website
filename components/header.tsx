@@ -48,7 +48,7 @@ export function HeaderDesktop() {
 
   return (
     <header
-      className={`header gsap-element hidden md:block fixed top-0 w-full bg-white/95 backdrop-blur-sm z-50 border-b border-gray-100 ${
+      className={`header hidden md:block fixed top-0 w-full bg-white/95 backdrop-blur-sm z-50 border-b border-gray-100 ${
         shouldInvert ? "invert" : ""
       }`}
     >
@@ -117,7 +117,7 @@ export function HeaderMobile() {
 
   return (
     <header
-      className={`header gsap-element block md:hidden fixed top-0 w-full z-50 border-b border-gray-100 ${
+      className={`header block md:hidden fixed top-0 w-full z-50 border-b border-gray-100 ${
         shouldInvert ? "invert bg-white backdrop-blur-sm" : "bg-white backdrop-blur-sm"
       }`}
     >

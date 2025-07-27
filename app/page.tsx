@@ -43,7 +43,7 @@ export default function HajAinaFashion() {
       id: "1", // Added ID for linking
       title: "Collection Automne 2024",
       designer: "Miora Rasoanaivo",
-      image: "/img/Collection1.jpg",
+      image: "/img/Collection3.jpg",
       category: "Couture",
     },
     {
@@ -64,7 +64,7 @@ export default function HajAinaFashion() {
       id: "4", // Added ID for linking
       title: "Heritage Moderne",
       designer: "Miora Rasoanaivo",
-      image: "/img/Collection1.jpg",
+      image: "/img/Collection4.jpg",
       category: "Fusion",
     },
   ]

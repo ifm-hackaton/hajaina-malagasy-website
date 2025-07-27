@@ -19,7 +19,7 @@ export default function MagazinePage() {
       title: "L'Art du Tissage Traditionnel Malgache",
       excerpt:
         "Plongée dans l'univers fascinant des techniques ancestrales de tissage qui inspirent nos créateurs contemporains.",
-      image: "/placeholder.svg?height=400&width=600&text=Traditional+Malagasy+weaving+techniques",
+      image: "/img/Collection6.jpg",
       category: "Tradition",
       author: "Miora Rasoanaivo",
       date: "15 Mars 2024",
@@ -31,7 +31,7 @@ export default function MagazinePage() {
       title: "Mode Durable : Les Innovations de 2024",
       excerpt:
         "Découvrez les dernières innovations en matière de mode éco-responsable et leur impact sur l'industrie textile malgache.",
-      image: "/placeholder.svg?height=400&width=600&text=Sustainable+fashion+innovations+2024",
+      image: "/img/Collection1.jpg",
       category: "Durabilité",
       author: "Hery Andriantsoa",
       date: "12 Mars 2024",
@@ -40,10 +40,10 @@ export default function MagazinePage() {
     },
     {
       id: 3,
-      title: "Portrait : Lalaina Rakoto, Nouvelle Génération",
+      title: "Portrait : Hery Andriantsoa, Nouvelle Génération",
       excerpt:
-        "Rencontre avec la jeune créatrice qui révolutionne le streetwear malgache avec ses créations audacieuses.",
-      image: "/placeholder.svg?height=400&width=600&text=Lalaina+Rakoto+fashion+designer+portrait",
+        "Rencontre avec le jeune créateur qui révolutionne le streetwear malgache avec ses créations audacieuses.",
+      image: "/img/Hery.jpg",
       category: "Portrait",
       author: "Équipe Haj'Aina",
       date: "10 Mars 2024",
@@ -54,7 +54,7 @@ export default function MagazinePage() {
       id: 4,
       title: "Tendances Automne-Hiver 2024",
       excerpt: "Les couleurs, textures et silhouettes qui définiront la mode malgache dans les mois à venir.",
-      image: "/placeholder.svg?height=400&width=600&text=Autumn+Winter+2024+fashion+trends",
+      image: "/img/Collection3.jpg",
       category: "Tendances",
       author: "Équipe Haj'Aina",
       date: "8 Mars 2024",
@@ -66,7 +66,7 @@ export default function MagazinePage() {
       title: "L'Impact Social de la Mode Éthique",
       excerpt:
         "Comment la mode éthique transforme les communautés rurales malgaches et crée de nouvelles opportunités.",
-      image: "/placeholder.svg?height=400&width=600&text=Social+impact+ethical+fashion+Madagascar",
+      image: "/img/Collab3.jpg",
       category: "Société",
       author: "Dr. Ravo Andriamanalina",
       date: "5 Mars 2024",
@@ -78,7 +78,7 @@ export default function MagazinePage() {
       title: "Matières Premières : La Soie Sauvage Malgache",
       excerpt:
         "Exploration des propriétés uniques de la soie sauvage locale et de son utilisation dans la haute couture.",
-      image: "/placeholder.svg?height=400&width=600&text=Wild+silk+Madagascar+luxury+materials",
+      image: "/img/Collab2.jpg",
       category: "Matériaux",
       author: "Miora Rasoanaivo",
       date: "2 Mars 2024",
