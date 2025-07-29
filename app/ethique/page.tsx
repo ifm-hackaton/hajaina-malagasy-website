@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { Leaf, Users, Globe, Sparkles, Award, BadgeCheck, ShieldCheck, Gem } from "lucide-react" // Ajout des icônes pour certifications
+import { Leaf, Users, Globe, Sparkles, BadgeCheck, ShieldCheck, Gem } from "lucide-react" // Ajout des icônes pour certifications
 import Image from "next/image"
 import Header from "@/components/header"
 import { Badge } from "@/components/ui/badge" // Import Badge
@@ -139,13 +139,8 @@ export default function EthiquePage() {
             <h2 className="text-5xl font-extralight tracking-[0.2em] mb-6 serif-font">Nos Valeurs</h2>
             <div className="w-32 h-px bg-black mx-auto mb-8" />
             <p className="text-gray-600 max-w-3xl mx-auto font-light leading-relaxed text-lg mb-8">
-              Chaque décision que nous prenons est guidée par nos valeurs fondamentales qui placent l'humain et
-              l'environnement au cœur de notre démarche.
-            </p>
-            <p className="text-gray-700 max-w-3xl mx-auto font-light leading-relaxed text-base flex items-center justify-center gap-2">
-              <Award className="h-5 w-5 text-black" />
-              Nous récompensons les comptes par des badges en suivant constamment leur blog éthique et leurs
-              collections.
+              Nous récompensons par des badges chaque compte guidée par nos valeurs fondamentales, qui placant l'humain et
+              l'environnement au cœur de leur démarche.
             </p>
           </div>
 
@@ -225,10 +220,10 @@ export default function EthiquePage() {
       <section className="py-24">
         <div className="container mx-auto px-6">
           <div className="text-center mb-20">
-            <h2 className="text-5xl font-extralight tracking-[0.2em] mb-6 serif-font">Blogs Éthiques</h2>
+            <h2 className="text-5xl font-extralight tracking-[0.2em] mb-6 serif-font">Nos artisants locaux</h2>
             <div className="w-32 h-px bg-black mx-auto mb-8" />
             <p className="text-gray-600 max-w-3xl mx-auto font-light leading-relaxed text-lg">
-              Découvrez les histoires inspirantes et les réflexions de nos créateurs sur la mode éthique et durable.
+              Découvrez les histoires inspirantes et les réflexions de nos artisants sur la mode éthique et durable.
             </p>
           </div>
 

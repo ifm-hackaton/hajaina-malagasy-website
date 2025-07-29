@@ -1,5 +1,11 @@
 export const DEFAULT_NAMESPACES = [
   "header",
   "heroSection",
-  "collectionSection"
+  "collectionSection",
+  "qrcodeSection",
+  "newsletterSection",
+  "ethiqueSection",
+  "recyclageSection",
+  "collaborationsSection",
+  "designersSection",
 ];

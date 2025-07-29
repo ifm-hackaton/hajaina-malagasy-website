@@ -15,7 +15,7 @@ import Footer from "@/components/footer" // Added import
 export default function LoginPage() {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
-  const [role, setRole] = useState("amateur") // Default role
+  const [role, setRole] = useState("creator") // Default role
   const [error, setError] = useState("")
   const router = useRouter()
 
@@ -32,7 +32,7 @@ export default function LoginPage() {
     // In a real app, you would send these credentials to a backend API
     if (email === "test@example.com" && password === "password") {
       localStorage.setItem("isLoggedIn", "true")
-      localStorage.setItem("userRole", role)
+      localStorage.setItem("userRole", "creator")
       localStorage.setItem("userEmail", email)
       router.push("/dashboard")
     } else {
@@ -87,6 +87,12 @@ export default function LoginPage() {
                     <RadioGroupItem value="creator" id="creator" />
                     <Label htmlFor="creator" className="font-light">
                       Créateur
+                    </Label>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <RadioGroupItem value="amateur" id="amateur" />
+                    <Label htmlFor="amateur" className="font-light">
+                      Prestataire
                     </Label>
                   </div>
                   <div className="flex items-center space-x-2">

@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Card, CardContent } from "@/components/ui/card"
@@ -14,7 +14,16 @@ import CustomCursor from '@/components/custom-cursor'
 import { useAnimation } from "@/animations"
 
 export default function HajAinaFashion() {
-  useAnimation(["heroSection", "collectionSection"]);
+  useAnimation([
+    "heroSection",
+    // "collectionSection",
+    // "designersSection",
+    // "collaborationsSection",
+    // "ethiqueSection",
+    // "recyclageSection",
+    // "newsletterSection",
+    // "qrcodeSection",
+  ]);
   
   const [currentSlide, setCurrentSlide] = useState(0)
   const featuredDesigners = [
@@ -127,13 +136,13 @@ export default function HajAinaFashion() {
         </div>
 
         {/* Hero Text Content */}
-        <div className="relative z-20 text-white px-6 md:px-12 lg:px-20 max-w-3xl md:ml-[45%] text-center md:text-left">
+        <div className="relative z-20 text-white px-6 md:px-12 lg:px-20 max-w-3xl md:ml-[45%] text-center md:text-left md:-translate-y-5">
           <h1 className="hero-title invisible text-4xl sm:text-5xl md:text-8xl font-extralight tracking-[0.2em] mb-10 serif-font">
             HAJ'AINA
           </h1>
           <div className="hero-subtext invisible flex items-center mb-10 gap-3">
             <p className="text-lg md:text-lg font-light tracking-[0.05em] opacity-90">
-              Mihaja, Manaja Aina... Manaja Tantara
+              Mihaja, Manaja Aina, Manaja Tantara
             </p> 
             <Image src="/img/madagascar.png" alt="" width="20" height="0" className="mt-1"/>
           </div>
@@ -144,13 +153,21 @@ export default function HajAinaFashion() {
           <Link href="/collections">
             <Button
               size="lg"
-              className="hero-button invisible bg-green-600 text-black hover:bg-green-100 text-xs tracking-[0.15em] px-8 py-4 font-normal uppercase"
+              className="hero-button invisible bg-green-600 text-black hover:bg-green-500 text-xs tracking-[0.15em] px-8 py-4 font-normal uppercase"
             >
               Explorer les Collections
               <ArrowRight className="ml-3 h-4 w-4" />
             </Button>
           </Link>
         </div>
+        <Image
+          src="/logo-med.jpg"
+          alt="Hero Fashion"
+          width={500}
+          height={500}
+          className="main-logo invisible absolute left-[50%] top-[42%] -translate-x-[50%] -translate-y-[50%] object-cover mb-10"
+          priority
+        />
       </section>
 
       {/* Marquee section*/}
@@ -161,9 +178,13 @@ export default function HajAinaFashion() {
         <div className="absolute -top-1 -left-full w-[202%] rotate-[-4deg] z-9 bg-gray-400">
           <div className="flex animate-marquee whitespace-nowrap text-2xl md:text-4xl font-light serif-font text-white uppercase gap-12 py-5">
             {Array(20)
-              .fill("Haj'Aina")
-              .map((text, i) => (
-                <span key={i}>{text}</span>
+              .fill("")
+              .map((_, i) => (
+                <div key={i}  className="flex gap-12">
+                  <span>extend bc</span>
+                  <span>conserfashion</span>
+                  <span>made for woman</span>
+                </div>
               ))}
           </div>
         </div>
@@ -171,10 +192,13 @@ export default function HajAinaFashion() {
         {/* Petit ruban */}
         <div className="absolute top-[50%] -left-full w-[202%] rotate-[4deg] z-3 bg-black/95 py-2">
           <div className="flex animate-marquee-slow whitespace-nowrap text-2xl md:text-4xl font-light serif-font text-white uppercase gap-12 py-2">
-            {Array(30)
-              .fill("Vos vêtements, votre histoire")
-              .map((text, i) => (
-                <span key={i}>{text}</span>
+            {Array(20)
+              .fill("")
+              .map((_, i) => (
+                <div key={i}  className="flex gap-12">
+                  <span>IFM Madagascar</span>
+                  <span>Mode ethique et durable</span>
+                </div>
               ))}
           </div>
         </div>
@@ -268,10 +292,10 @@ export default function HajAinaFashion() {
               environnementale
             </p>
             
-            <div className="absolute top-[-8rem] md:top-0 right-10">
+            <div className="absolute top-[-8rem] md:top-0 right-16">
               <div className="rotating-star min-w-[60px] min-h-[60px] md:min-w-[100px] md:min-h-[100px]"/>
               <div className="absolute inset-0 flex justify-center items-center text-lg md:text-2xl serif-font text-white">
-                <p>
+                <p className="rotate-[5deg] tag">
                   100<span className="text-lg">%</span><br/>
                   <span>Gasy</span>
                 </p>
@@ -447,7 +471,7 @@ export default function HajAinaFashion() {
             {collaborationAnnouncements.map((announcement) => (
               <Card
                 key={announcement.id}
-                className="group cursor-pointer border-0 shadow-none hover:shadow-2xl transition-all duration-500 overflow-hidden"
+                className="card group cursor-pointer border-0 shadow-none hover:shadow-2xl"
               >
                 <CardContent className="p-0">
                   <div className="relative h-64 overflow-hidden">
@@ -493,8 +517,60 @@ export default function HajAinaFashion() {
         </div>
       </section>
 
+      {/* QRCode Section */}
+      <section className="ethique-section py-24 bg-gray-50 text-black">
+        <div className="container mx-auto px-6">
+          <div className="grid md:grid-cols-2 gap-16 items-center">
+            <div>
+              <h2 className="text-5xl font-extralight tracking-[0.2em] mb-8 serif-font">
+                Rendez vos créations uniques
+              </h2>
+              <div className="w-32 h-px bg-black mb-10" />
+              <p className="text-xl leading-relaxed mb-10 text-gray-800 font-light">
+                Offrez à chaque pièce de votre collection une identité propre grâce à un QR Code unique. 
+                Le scanner permettra de découvrir l’histoire du vêtement, ses valeurs et son créateur.
+              </p>
+              <div className="space-y-6 mb-12">
+                <div className="flex items-center space-x-4">
+                  <Heart className="h-8 w-8 text-black flex-shrink-0" />
+                  <span className="font-light tracking-wide">
+                    Identité du produit
+                  </span>
+                </div>
+                <div className="flex items-center space-x-4">
+                  <Handshake className="h-6 w-6 text-black flex-shrink-0" />
+                  <span className="font-light tracking-wide">
+                    Transparence
+                  </span>
+                </div>
+                <div className="flex items-center space-x-4">
+                  <Recycle className="h-6 w-6 text-black flex-shrink-0" />
+                  <span className="font-light tracking-wide">
+                    Traçabilité
+                  </span>
+                </div>
+              </div>
+              <Link href="/ethique">
+                <Button
+                  variant="outline"
+                  className="border-black text-black hover:bg-black hover:text-white bg-transparent font-light tracking-[0.1em] uppercase px-8 py-3"
+                >
+                  Créer une collection
+                </Button>
+              </Link>
+            </div>
+            <div className="relative overflow-visible h-full min-h-[200px] rounded-lg flex justify-center items-center">
+              <div className="scanned-image"/>
+              <div className="qrcode-frame"/>
+              <div className="scanner absolute left-1/2 -translate-x-1/2 top-1/2 w-full h-2 bg-green-300 rounded blur-xs z-20 shadow-lg" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+
       {/* Newsletter */}
-      <section className="newsletter-section py-24 bg-gray-50">
+      <section className="newsletter-section py-24 bg-white">
         <div className="container mx-auto px-6">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-4xl font-extralight tracking-[0.2em] mb-6 serif-font">Restez Connecté</h2>
