@@ -295,7 +295,7 @@ export default function HajAinaFashion() {
             <div className="absolute top-[-8rem] md:top-0 right-16">
               <div className="rotating-star min-w-[60px] min-h-[60px] md:min-w-[100px] md:min-h-[100px]"/>
               <div className="absolute inset-0 flex justify-center items-center text-lg md:text-2xl serif-font text-white">
-                <p className="rotate-[5deg] tag">
+                <p className="tag">
                   100<span className="text-lg">%</span><br/>
                   <span>Gasy</span>
                 </p>
