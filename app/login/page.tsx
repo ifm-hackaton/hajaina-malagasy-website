@@ -640,7 +640,7 @@ export default function Authentication() {
             </Card>
           </div>
         
-          <div className="space-x-10">
+          <div className="space-x-10 mb-6">
             <SocialButton provider="facebook" variant="login" onClick={()=>{}}/>
             <SocialButton provider="google" variant="login" onClick={()=>{}} />
             <SocialButton provider="other" variant="login" onClick={()=>{}} />
