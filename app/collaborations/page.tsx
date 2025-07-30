@@ -100,7 +100,7 @@ export default function CollaborationsPage() {
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <h1 className="text-6xl font-extralight tracking-[0.2em] mb-6 serif-font">
+            <h1 className="text-4xl md:text-6xl font-extralight tracking-[0.2em] mb-6 serif-font">
               Mes Collaborations
             </h1>
             <div className="w-32 h-px bg-black mx-auto mb-8" />

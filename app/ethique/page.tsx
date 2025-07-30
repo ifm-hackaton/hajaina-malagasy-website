@@ -120,7 +120,7 @@ export default function EthiquePage() {
         />
         <div className="relative z-20 container mx-auto px-6 text-white">
           <div className="max-w-4xl">
-            <h1 className="text-6xl md:text-7xl font-extralight tracking-[0.2em] mb-8 serif-font">Mode Éthique</h1>
+            <h1 className="text-4xl md:text-6xl font-extralight tracking-[0.2em] mb-8 serif-font">Mode Éthique</h1>
             <div className="w-32 h-px bg-white mb-10" />
             <p className="text-xl md:text-2xl font-light leading-relaxed mb-12 max-w-3xl">
               Notre engagement pour une mode responsable qui respecte les artisans, préserve l'environnement et valorise

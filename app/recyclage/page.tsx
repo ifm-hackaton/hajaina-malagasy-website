@@ -91,7 +91,7 @@ export default function RecyclagePage() {
         />
         <div className="relative z-20 container mx-auto px-6 text-white">
           <div className="max-w-4xl">
-            <h1 className="text-6xl md:text-7xl font-extralight tracking-[0.2em] mb-8 serif-font">Espace Recyclage</h1>
+            <h1 className="text-4xl md:text-6xl md:text-7xl font-extralight tracking-[0.2em] mb-8 serif-font">Espace Recyclage</h1>
             <div className="w-32 h-px bg-white mb-10" />
             <p className="text-xl md:text-2xl font-light leading-relaxed mb-12 max-w-3xl">
               Donnez une seconde vie à vos vêtements. Notre programme de recyclage transforme vos anciennes pièces en

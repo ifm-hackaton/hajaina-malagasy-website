@@ -209,7 +209,7 @@ export default function HajAinaFashion() {
       <section className="collections-section py-24 bg-gray-50">
         <div className="container mx-auto px-6">
           <div className="text-center mb-20">
-            <h2 className="text-5xl font-extralight tracking-[0.2em] mb-6 serif-font">Collections Phares</h2>
+            <h2 className="text-4xl md:text-5xl font-extralight tracking-[0.2em] mb-6 serif-font">Collections Phares</h2>
             <div className="w-32 h-px bg-black mx-auto mb-8 separator" />
             <p className="text-lg text-gray-600 font-light tracking-wide max-w-2xl mx-auto leading-relaxed">
               Chaque collection raconte une histoire unique, mêlant l'héritage culturel malgache aux tendances
