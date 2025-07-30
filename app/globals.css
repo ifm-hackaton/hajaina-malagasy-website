@@ -314,6 +314,9 @@ header.invert a, header.invert button {
   75% {
     top: 90%;
   }
+  90% {
+    top: 0%;
+  }
   100% {
     top: 0%;
   }
@@ -336,6 +339,10 @@ header.invert a, header.invert button {
     height: 90%;
     filter: blur(0px) brightness(1);
   }
+  90% {
+    height: 0%;
+    filter: blur(2px) brightness(0.9);
+  }
   100% {
     height: 0%;
     filter: blur(2px) brightness(0.9);
@@ -354,6 +361,9 @@ header.invert a, header.invert button {
   }
   75% {
     height: 10%;
+  }
+  90% {
+    height: 100%;
   }
   100% {
     height: 100%;

@@ -54,7 +54,7 @@ export default function HajAinaFashion() {
   const collections = [
     {
       id: "1", // Added ID for linking
-      title: "Collection Automne 2024",
+      title: "Collection Ete 2024",
       designer: "Miora Rasoanaivo",
       image: "/img/Collection3.jpg",
       category: "Couture",
@@ -561,7 +561,7 @@ export default function HajAinaFashion() {
                 </Button>
               </Link>
             </div>
-            <div className="scanner-container relative overflow-visible h-full min-h-[200px] rounded-lg flex justify-center items-center">
+            <div className="scanner-container relative overflow-visible w-full aspect-[1/0.75] rounded-lg flex justify-center items-center">
               <div className="scanned-image"/>
               <div className="qrcode-frame"/>
               <div className="scanner absolute left-1/2 -translate-x-1/2 top-1/2 w-[95%] h-1 bg-green-300 rounded blur-xs z-20 shadow-lg" />

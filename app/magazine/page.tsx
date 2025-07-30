@@ -52,7 +52,7 @@ export default function MagazinePage() {
     },
     {
       id: 4,
-      title: "Tendances Automne-Hiver 2024",
+      title: "Tendances Ete-Hiver 2024",
       excerpt: "Les couleurs, textures et silhouettes qui définiront la mode malgache dans les mois à venir.",
       image: "/img/Collection3.jpg",
       category: "Tendances",

@@ -17,13 +17,13 @@ export default function CollectionsPage() {
   const collections = [
     {
       id: "1",
-      title: "Collection Automne 2024",
+      title: "Collection Ete 2024",
       designer: "Miora Rasoanaivo",
       image: "/img/Collection3.jpg",
       category: "Couture",
       price: "À partir de 150 000 Ar",
       description:
-        "Une collection qui célèbre les couleurs chaudes de l'automne malgache avec des tissus traditionnels revisités.",
+        "Une collection qui célèbre les couleurs chaudes de l'été malgache avec des tissus traditionnels revisités.",
       pieces: 24,
     },
     {
