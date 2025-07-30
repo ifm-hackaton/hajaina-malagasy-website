@@ -3,8 +3,9 @@
 import { useEffect, useState } from "react"
 import { useParams, useRouter } from "next/navigation"
 import { Button } from "@/components/ui/button"
+import { ManajaButton } from "@/components/ui/manaja-button"
 import { Badge } from "@/components/ui/badge"
-import { ArrowLeft, Handshake, ShoppingCart } from "lucide-react"
+import { ArrowLeft, ShoppingCart } from "lucide-react"
 import Image from "next/image"
 import Header from "@/components/header"
 import Footer from "@/components/footer" // Added import
@@ -24,7 +25,7 @@ export default function CollectionDetailPage() {
         title: "Collection Automne 2024",
         designer: "Miora Rasoanaivo",
         image:
-          "/placeholder.svg?height=800&width=600&text=Autumn+fashion+collection+elegant+dresses+traditional+patterns",
+          "/img/collection3.jpg",
         category: "Couture",
         price: "150 000 Ar",
         description:
@@ -37,16 +38,16 @@ export default function CollectionDetailPage() {
           "Tailles disponibles : XS, S, M, L, XL",
         ],
         gallery: [
-          "/placeholder.svg?height=600&width=400&text=Autumn+collection+dress+detail+1",
-          "/placeholder.svg?height=600&width=400&text=Autumn+collection+dress+detail+2",
-          "/placeholder.svg?height=600&width=400&text=Autumn+collection+dress+detail+3",
+          "/img/collection3.jpg",
+          "/img/collection3.jpg",
+          "/img/collection3.jpg",
         ],
       },
       {
         id: "2",
         title: "Eco-Luxe Series",
         designer: "Hery Andriantsoa",
-        image: "/placeholder.svg?height=800&width=600&text=Sustainable+luxury+fashion+eco+friendly+materials",
+        image: "/img/collection1.jpg",
         category: "Durable",
         price: "200 000 Ar",
         description:
@@ -59,16 +60,16 @@ export default function CollectionDetailPage() {
           "Certifications : B-Corp, Fair Trade",
         ],
         gallery: [
-          "/placeholder.svg?height=600&width=400&text=Eco-luxe+series+outfit+1",
-          "/placeholder.svg?height=600&width=400&text=Eco-luxe+series+outfit+2",
-          "/placeholder.svg?height=600&width=400&text=Eco-luxe+series+outfit+3",
+          "/img/collection1.jpg",
+          "/img/collection1.jpg",
+          "/img/collection1.jpg",
         ],
       },
       {
         id: "3",
         title: "Urban Malagasy",
         designer: "Lalaina Rakoto",
-        image: "/placeholder.svg?height=800&width=600&text=Urban+streetwear+modern+Malagasy+style",
+        image: "/img/collection2.jpg",
         category: "Streetwear",
         price: "80 000 Ar",
         description:
@@ -81,16 +82,16 @@ export default function CollectionDetailPage() {
           "Accessoires : Sacs banane, casquettes brodées",
         ],
         gallery: [
-          "/placeholder.svg?height=600&width=400&text=Urban+Malagasy+look+1",
-          "/placeholder.svg?height=600&width=400&text=Urban+Malagasy+look+2",
-          "/placeholder.svg?height=600&width=400&text=Urban+Malagasy+look+3",
+          "/img/collection2.jpg",
+          "/img/collection2.jpg",
+          "/img/collection2.jpg",
         ],
       },
       {
         id: "4",
         title: "Heritage Moderne",
         designer: "Miora Rasoanaivo",
-        image: "/placeholder.svg?height=800&width=600&text=Modern+heritage+fashion+traditional+meets+contemporary",
+        image: "/img/collection4.jpg",
         category: "Fusion",
         price: "180 000 Ar",
         description:
@@ -103,16 +104,16 @@ export default function CollectionDetailPage() {
           "Pièces clés : Vestes structurées, jupes longues",
         ],
         gallery: [
-          "/placeholder.svg?height=600&width=400&text=Heritage+Moderne+outfit+1",
-          "/placeholder.svg?height=600&width=400&text=Heritage+Moderne+outfit+2",
-          "/placeholder.svg?height=600&width=400&text=Heritage+Moderne+outfit+3",
+          "/img/collection4.jpg",
+          "/img/collection4.jpg",
+          "/img/collection4.jpg",
         ],
       },
       {
         id: "5",
         title: "Soie Sauvage",
         designer: "Hery Andriantsoa",
-        image: "/placeholder.svg?height=800&width=600&text=Wild+silk+luxury+collection",
+        image: "/img/collection5.jpg",
         category: "Couture",
         price: "300 000 Ar",
         description:
@@ -125,16 +126,16 @@ export default function CollectionDetailPage() {
           "Disponibilité : Édition limitée",
         ],
         gallery: [
-          "/placeholder.svg?height=600&width=400&text=Wild+silk+dress+1",
-          "/placeholder.svg?height=600&width=400&text=Wild+silk+dress+2",
-          "/placeholder.svg?height=600&width=400&text=Wild+silk+dress+3",
+          "/img/collection5.jpg",
+          "/img/collection5.jpg",
+          "/img/collection5.jpg",
         ],
       },
       {
         id: "6",
         title: "Nouvelle Vague",
         designer: "Lalaina Rakoto",
-        image: "/placeholder.svg?height=800&width=600&text=New+wave+fashion+avant+garde",
+        image: "/img/collection6.jpg",
         category: "Avant-garde",
         price: "250 000 Ar",
         description:
@@ -147,9 +148,9 @@ export default function CollectionDetailPage() {
           "Pièces uniques : Sculptures portables",
         ],
         gallery: [
-          "/placeholder.svg?height=600&width=400&text=New+wave+avant-garde+look+1",
-          "/placeholder.svg?height=600&width=400&text=New+wave+avant-garde+look+2",
-          "/placeholder.svg?height=600&width=400&text=New+wave+avant-garde+look+3",
+          "/img/collection6.jpg",
+          "/img/collection6.jpg",
+          "/img/collection6.jpg",
         ],
       },
     ]
@@ -236,13 +237,7 @@ export default function CollectionDetailPage() {
                     <ShoppingCart className="mr-2 h-4 w-4" />
                     Ajouter au panier
                   </Button>
-                  <Button
-                    variant="outline"
-                    className="bg-transparent border-gray-300 hover:border-black font-light tracking-[0.1em] uppercase px-8 py-3"
-                  >
-                    <Handshake className="mr-2 h-4 w-4" />
-                    Manaja
-                  </Button>
+                  <ManajaButton/>
                 </div>
               </div>
             </div>

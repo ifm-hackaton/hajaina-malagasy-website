@@ -49,8 +49,7 @@ export default function DashboardPage() {
             <h1 className="text-6xl font-extralight tracking-[0.2em] mb-6 serif-font">Mon Compte</h1>
             <div className="w-32 h-px bg-black mx-auto mb-8" />
             <p className="text-gray-600 max-w-3xl mx-auto font-light leading-relaxed text-lg">
-              Bienvenue, {userEmail} ! Vous êtes connecté en tant que{" "}
-              <span className="font-semibold">{userRole === "creator" ? "Créateur" : "Amateur de mode"}</span>.
+              Bienvenue, {userEmail} !
             </p>
             <Button
               onClick={handleLogout}
@@ -64,7 +63,7 @@ export default function DashboardPage() {
 
           {userRole === "creator" && (
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12 mt-16">
-              <Card className="text-center border-0 shadow-none hover:shadow-lg transition-all duration-300">
+              <Card className="bg-white text-center border-0 shadow-none hover:shadow-lg transition-all duration-300">
                 <CardContent className="p-8">
                   <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-6">
                     <Palette className="h-8 w-8 text-black" />
@@ -78,7 +77,7 @@ export default function DashboardPage() {
                   </Button>
                 </CardContent>
               </Card>
-              <Card className="text-center border-0 shadow-none hover:shadow-lg transition-all duration-300">
+              <Card className="bg-white text-center border-0 shadow-none hover:shadow-lg transition-all duration-300">
                 <CardContent className="p-8">
                   <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-6">
                     <Briefcase className="h-8 w-8 text-black" />
@@ -92,7 +91,7 @@ export default function DashboardPage() {
                   </Button>
                 </CardContent>
               </Card>
-              <Card className="text-center border-0 shadow-none hover:shadow-lg transition-all duration-300">
+              <Card className="bg-white text-center border-0 shadow-none hover:shadow-lg transition-all duration-300">
                 <CardContent className="p-8">
                   <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-6">
                     <Handshake className="h-8 w-8 text-black" />
@@ -108,7 +107,7 @@ export default function DashboardPage() {
                   </Link>
                 </CardContent>
               </Card>
-              <Card className="text-center border-0 shadow-none hover:shadow-lg transition-all duration-300">
+              <Card className="bg-white text-center border-0 shadow-none hover:shadow-lg transition-all duration-300">
                 <CardContent className="p-8">
                   <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-6">
                     <BookOpen className="h-8 w-8 text-black" />
@@ -124,7 +123,7 @@ export default function DashboardPage() {
                   </Link>
                 </CardContent>
               </Card>
-              <Card className="text-center border-0 shadow-none hover:shadow-lg transition-all duration-300">
+              <Card className="bg-white text-center border-0 shadow-none hover:shadow-lg transition-all duration-300">
                 <CardContent className="p-8">
                   <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-6">
                     <Settings className="h-8 w-8 text-black" />
@@ -143,7 +142,7 @@ export default function DashboardPage() {
 
           {userRole === "amateur" && (
             <div className="grid md:grid-cols-2 gap-12 mt-16">
-              <Card className="text-center border-0 shadow-none hover:shadow-lg transition-all duration-300">
+              <Card className="bg-white text-center border-0 shadow-none hover:shadow-lg transition-all duration-300">
                 <CardContent className="p-8">
                   <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-6">
                     <Heart className="h-8 w-8 text-black" />
@@ -157,7 +156,7 @@ export default function DashboardPage() {
                   </Button>
                 </CardContent>
               </Card>
-              <Card className="text-center border-0 shadow-none hover:shadow-lg transition-all duration-300">
+              <Card className="bg-white text-center border-0 shadow-none hover:shadow-lg transition-all duration-300">
                 <CardContent className="p-8">
                   <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-6">
                     <Settings className="h-8 w-8 text-black" />

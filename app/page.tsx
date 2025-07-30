@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
+import { ManajaButton } from "@/components/ui/manaja-button"
 import { ArrowRight, Recycle, Heart, Star, ChevronLeft, ChevronRight, Handshake } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
@@ -249,15 +250,16 @@ export default function HajAinaFashion() {
                           Une exploration unique de l'identité malgache à travers des créations contemporaines qui
                           célèbrent notre héritage tout en embrassant l'innovation et la durabilité.
                         </p>
-                        <Link href={`/collections/${collection.id}`}>
-                          <Button
-                            variant="outline"
-                            className="tracking-[0.1em] bg-transparent font-light uppercase text-sm px-8 py-3 mt-10"
-                          >
-                            Découvrir
-                            <ArrowRight className="ml-3 h-4 w-4" />
-                          </Button>
-                        </Link>
+                        
+                        <div className="flex gap-4">
+                          <Link href={`/collections/${collection.id}`}>
+                            <Button className="bg-black text-white hover:bg-gray-800 font-light tracking-[0.1em] uppercase px-8 py-3">
+                              Découvrir
+                              <ArrowRight className="ml-3 h-4 w-4" /> 
+                            </Button>
+                          </Link>
+                          <ManajaButton/>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -559,10 +561,10 @@ export default function HajAinaFashion() {
                 </Button>
               </Link>
             </div>
-            <div className="relative overflow-visible h-full min-h-[200px] rounded-lg flex justify-center items-center">
+            <div className="scanner-container relative overflow-visible h-full min-h-[200px] rounded-lg flex justify-center items-center">
               <div className="scanned-image"/>
               <div className="qrcode-frame"/>
-              <div className="scanner absolute left-1/2 -translate-x-1/2 top-1/2 w-full h-2 bg-green-300 rounded blur-xs z-20 shadow-lg" />
+              <div className="scanner absolute left-1/2 -translate-x-1/2 top-1/2 w-[95%] h-1 bg-green-300 rounded blur-xs z-20 shadow-lg" />
             </div>
           </div>
         </div>
