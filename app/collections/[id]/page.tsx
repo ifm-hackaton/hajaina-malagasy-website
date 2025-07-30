@@ -22,7 +22,7 @@ export default function CollectionDetailPage() {
     const allCollections = [
       {
         id: "1",
-        title: "Collection Ete 2024",
+        title: "Collection Eté 2024",
         designer: "Miora Rasoanaivo",
         image:
           "/img/collection3.jpg",

@@ -9,11 +9,11 @@ import { Label } from "@/components/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { Badge } from "@/components/ui/badge"
-import { ChevronLeft, ChevronRight } from "lucide-react"
+import { ArrowLeft, ChevronLeft, ChevronRight, Handshake, Sparkles } from "lucide-react"
 import { useRouter } from "next/navigation"
-import Header from "@/components/header"
-import Footer from "@/components/footer"
+import Image from "next/image"
+import Link from "next/link"
+import SocialButton from "@/components/ui/social-button"
 
 // Login Component
 const LoginForm = ({ onError, users }: any) => {
@@ -47,9 +47,9 @@ const LoginForm = ({ onError, users }: any) => {
 
 
   return (
-    <form onSubmit={handleLogin} className="space-y-6 mt-6">
-      <div className="space-y-2">
-        <Label htmlFor="loginEmail" className="font-light tracking-wide">
+    <form onSubmit={handleLogin} className="text-white space-y-6 mt-6">
+      <div className="text-white space-y-2">
+        <Label htmlFor="loginEmail" className="text-white font-light tracking-wide text-md">
           Email
         </Label>
         <Input
@@ -59,11 +59,11 @@ const LoginForm = ({ onError, users }: any) => {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
-          className="border-gray-300 focus:border-black font-light"
+          className="text-white border-gray-800 focus:border-white font-light"
         />
       </div>
-      <div className="space-y-2">
-        <Label htmlFor="loginPassword" className="font-light tracking-wide">
+      <div className="text-white space-y-2">
+        <Label htmlFor="loginPassword" className="text-white font-light tracking-wide text-md">
           Mot de passe
         </Label>
         <Input
@@ -73,17 +73,17 @@ const LoginForm = ({ onError, users }: any) => {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
-          className="border-gray-300 focus:border-black font-light"
+          className="text-white border-gray-800 focus:border-white font-light"
         />
       </div>
       <Button
         type="submit"
-        className="w-full bg-black text-white hover:bg-gray-800 font-light tracking-[0.1em] uppercase py-3"
+        className="text-black w-full bg-white/95 hover:bg-gray-200 font-light tracking-[0.1em] uppercase py-3"
       >
         Se connecter
       </Button>
-      <p className="text-center text-sm text-gray-500 mt-6 font-light">
-        Test : <span className="font-semibold">test@example.com</span> / <span className="font-semibold">password123</span>
+      <p className="text-white text-center text-md mt-6 font-light">
+        Test : <span className="text-white font-semibold">test@example.com</span> / <span className="text-white font-semibold">password123</span>
       </p>
     </form>
   )
@@ -97,19 +97,14 @@ const RoleSelectionStep = ({ role, setRole, onNext }: any) => {
   }
 
   return (
-    <div className="space-y-6">
-      <div className="text-center">
-        <h3 className="text-lg font-light tracking-wide mb-2">Étape 1/3</h3>
-        <p className="text-sm text-gray-600">Quel est votre profil ?</p>
-      </div>
-      
-      <div className="space-y-2">
-        <Label className="font-light tracking-wide">Vous êtes : *</Label>
+    <div className="text-white space-y-6">
+      <div className="text-white space-y-2">
+        <Label className="text-white font-light tracking-wide text-md">Vous êtes : *</Label>
         <Select value={role} onValueChange={setRole}>
-          <SelectTrigger className="w-full">
+          <SelectTrigger className="text-white border-gray-700 w-full">
             <SelectValue placeholder="Sélectionnez votre profil" />
           </SelectTrigger>
-          <SelectContent className="z-10 bg-white">
+          <SelectContent className="text-white border-gray-700 z-10 bg-black/95">
             <SelectItem value="createur">Créateur de mode</SelectItem>
             <SelectItem value="prestataire">Artisant / Prestataire</SelectItem>
             <SelectItem value="organisme">Organisme</SelectItem>
@@ -121,9 +116,9 @@ const RoleSelectionStep = ({ role, setRole, onNext }: any) => {
       <Button
         onClick={handleNext}
         disabled={!role}
-        className="w-full bg-black text-white hover:bg-gray-800 font-light tracking-[0.1em] uppercase py-3 disabled:bg-gray-300"
+        className="text-black w-full bg-white/95 hover:bg-gray-200 font-light tracking-[0.1em] uppercase py-3 disabled:bg-gray-200"
       >
-        Suivant <ChevronRight className="ml-2 h-4 w-4" />
+        Suivant <ChevronRight className="text-black ml-2 h-4 w-4" />
       </Button>
     </div>
   )
@@ -157,8 +152,8 @@ const PersonalInfoStep = ({
       case "createur":
         return (
           <>
-            <div className="space-y-2">
-              <Label htmlFor="brandName" className="font-light tracking-wide">
+            <div className="text-white space-y-2">
+              <Label htmlFor="brandName" className="text-white font-light tracking-wide text-md">
                 Nom de marque *
               </Label>
               <Input
@@ -166,18 +161,18 @@ const PersonalInfoStep = ({
                 placeholder="Votre marque"
                 value={brandName}
                 onChange={(e) => setBrandName(e.target.value)}
-                className="border-gray-300 focus:border-black font-light"
+                className="text-white border-gray-800 focus:border-white font-light"
               />
             </div>
-            <div className="space-y-2">
-              <Label htmlFor="speciality" className="font-light tracking-wide">
+            <div className="text-white space-y-2">
+              <Label htmlFor="speciality" className="text-white font-light tracking-wide text-md">
                 Spécialité
               </Label>
               <Select value={speciality} onValueChange={setSpeciality}>
-                <SelectTrigger>
+                <SelectTrigger className="text-white border-gray-700 z-10 bg-transparent">
                   <SelectValue placeholder="Votre spécialité" />
                 </SelectTrigger>
-                <SelectContent className="z-10 bg-white">
+                <SelectContent className="text-white border-gray-700 z-10 bg-black/95">
                   <SelectItem value="pret-a-porter">Prêt-à-porter</SelectItem>
                   <SelectItem value="haute-couture">Haute couture</SelectItem>
                   <SelectItem value="accessoires">Accessoires</SelectItem>
@@ -193,8 +188,8 @@ const PersonalInfoStep = ({
       case "prestataire":
         return (
           <>
-            <div className="space-y-2">
-              <Label htmlFor="companyName" className="font-light tracking-wide">
+            <div className="text-white space-y-2">
+              <Label htmlFor="companyName" className="text-white font-light tracking-wide text-md">
                 Nom de l'entreprise *
               </Label>
               <Input
@@ -202,18 +197,18 @@ const PersonalInfoStep = ({
                 placeholder="Votre entreprise"
                 value={companyName}
                 onChange={(e) => setCompanyName(e.target.value)}
-                className="border-gray-300 focus:border-black font-light"
+                className="text-white border-gray-800 focus:border-white font-light"
               />
             </div>
-            <div className="space-y-2">
-              <Label htmlFor="speciality" className="font-light tracking-wide">
+            <div className="text-white space-y-2">
+              <Label htmlFor="speciality" className="text-white font-light tracking-wide text-md">
                 Type de prestation
               </Label>
               <Select value={speciality} onValueChange={setSpeciality}>
-                <SelectTrigger>
+                <SelectTrigger className="text-white border-gray-700 z-10 bg-transparent">
                   <SelectValue placeholder="Votre spécialité" />
                 </SelectTrigger>
-                <SelectContent className="z-10 bg-white">
+                <SelectContent className="text-white border-gray-700 z-10 bg-black/95">
                   <SelectItem value="artisanat">Artisanat</SelectItem>
                   <SelectItem value="textile">Matières textiles</SelectItem>
                   <SelectItem value="mannequinat">Mannequinat</SelectItem>
@@ -228,15 +223,15 @@ const PersonalInfoStep = ({
       
       case "organisme":
         return (
-          <div className="space-y-2">
-            <Label htmlFor="organizationType" className="font-light tracking-wide">
+          <div className="text-white space-y-2">
+            <Label htmlFor="organizationType" className="text-white font-light tracking-wide text-md">
               Type d'organisme *
             </Label>
             <Select value={organizationType} onValueChange={setOrganizationType}>
-              <SelectTrigger>
+              <SelectTrigger className="text-white border-gray-700 z-10 bg-transparent">
                 <SelectValue placeholder="Type d'organisme" />
               </SelectTrigger>
-              <SelectContent className="z-10 bg-white">
+              <SelectContent className="text-white border-gray-700 z-10 bg-black/95">
                 <SelectItem value="agence">Agence</SelectItem>
                 <SelectItem value="association">Association</SelectItem>
                 <SelectItem value="syndicat">Syndicat</SelectItem>
@@ -248,15 +243,15 @@ const PersonalInfoStep = ({
       
       case "amateur":
         return (
-          <div className="space-y-2">
-            <Label htmlFor="speciality" className="font-light tracking-wide">
+          <div className="text-white space-y-2">
+            <Label htmlFor="speciality" className="text-white font-light tracking-wide text-md">
               Centres d'intérêt
             </Label>
             <Select value={speciality} onValueChange={setSpeciality}>
-              <SelectTrigger>
+              <SelectTrigger className="text-white border-gray-700 z-10 bg-transparent">
                 <SelectValue placeholder="Vos intérêts mode" />
               </SelectTrigger>
-              <SelectContent className="z-10 bg-white">
+              <SelectContent className="text-white border-gray-700 z-10 bg-black/95">
                 <SelectItem value="tendances">Tendances mode</SelectItem>
                 <SelectItem value="vintage">Mode vintage</SelectItem>
                 <SelectItem value="luxe">Mode de luxe</SelectItem>
@@ -282,22 +277,10 @@ const PersonalInfoStep = ({
   }
 
   return (
-    <div className="space-y-6">
-      <div className="text-center">
-        <h3 className="text-lg font-light tracking-wide mb-2">Étape 2/3</h3>
-        <p className="text-sm text-gray-600">Informations personnelles</p>
-        <Badge variant="outline" className="mt-2 font-light">
-          {role === "createur" && "Créateur de mode"}
-          {role === "prestataire" && "Prestataire"}
-          {role === "industrie" && "Industrie"}
-          {role === "organisme" && "Organisme"}
-          {role === "amateur" && "Amateur de mode"}
-        </Badge>
-      </div>
-
-      <div className="grid grid-cols-2 gap-4">
-        <div className="space-y-2">
-          <Label htmlFor="firstName" className="font-light tracking-wide">
+    <div className="text-white space-y-6">
+      <div className="text-white grid grid-cols-2 gap-4">
+        <div className="text-white space-y-2">
+          <Label htmlFor="firstName" className="text-white font-light tracking-wide text-md">
             Prénom *
           </Label>
           <Input
@@ -305,11 +288,11 @@ const PersonalInfoStep = ({
             placeholder="Prénom"
             value={firstName}
             onChange={(e) => setFirstName(e.target.value)}
-            className="border-gray-300 focus:border-black font-light"
+            className="text-white border-gray-800 focus:border-white font-light"
           />
         </div>
-        <div className="space-y-2">
-          <Label htmlFor="lastName" className="font-light tracking-wide">
+        <div className="text-white space-y-2">
+          <Label htmlFor="lastName" className="text-white font-light tracking-wide text-md">
             Nom *
           </Label>
           <Input
@@ -317,28 +300,28 @@ const PersonalInfoStep = ({
             placeholder="Nom"
             value={lastName}
             onChange={(e) => setLastName(e.target.value)}
-            className="border-gray-300 focus:border-black font-light"
+            className="text-white border-gray-800 focus:border-white font-light"
           />
         </div>
       </div>
 
       {renderRoleFields()}
 
-      <div className="flex gap-3">
+      <div className="text-white flex gap-3">
         <Button
           type="button"
           onClick={onPrev}
           variant="outline"
-          className="flex-1 font-light tracking-[0.1em] uppercase py-3"
+          className="text-black flex-1 bg-white/95 hover:bg-gray-200 font-light tracking-[0.1em] uppercase py-3"
         >
-          <ChevronLeft className="mr-2 h-4 w-4" /> Précédent
+          <ChevronLeft className="text-black mr-2 h-4 w-4" /> Précédent
         </Button>
         <Button
           onClick={handleNext}
           disabled={!isValid()}
-          className="flex-1 bg-black text-white hover:bg-gray-800 font-light tracking-[0.1em] uppercase py-3 disabled:bg-gray-300"
+          className="text-black flex-1 bg-white/95 hover:bg-gray-200 font-light tracking-[0.1em] uppercase py-3 disabled:bg-gray-200"
         >
-          Suivant <ChevronRight className="ml-2 h-4 w-4" />
+          Suivant <ChevronRight className="text-black ml-2 h-4 w-4" />
         </Button>
       </div>
     </div>
@@ -362,15 +345,10 @@ const AccountCreationStep = ({
   }
 
   return (
-    <div className="space-y-6">
-      <div className="text-center">
-        <h3 className="text-lg font-light tracking-wide mb-2">Étape 3/3</h3>
-        <p className="text-sm text-gray-600">Création de votre compte</p>
-      </div>
-
-      <form onSubmit={handleSubmit} className="space-y-4">
-        <div className="space-y-2">
-          <Label htmlFor="signupEmail" className="font-light tracking-wide">
+    <div className="text-white space-y-6">
+      <form onSubmit={handleSubmit} className="text-white space-y-4">
+        <div className="text-white space-y-2">
+          <Label htmlFor="signupEmail" className="text-white font-light tracking-wide text-md">
             Email *
           </Label>
           <Input
@@ -379,12 +357,12 @@ const AccountCreationStep = ({
             placeholder="votre@email.com"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="border-gray-300 focus:border-black font-light"
+            className="text-white border-gray-800 focus:border-white font-light"
           />
         </div>
 
-        <div className="space-y-2">
-          <Label htmlFor="signupPassword" className="font-light tracking-wide">
+        <div className="text-white space-y-2">
+          <Label htmlFor="signupPassword" className="text-white font-light tracking-wide text-md">
             Mot de passe *
           </Label>
           <Input
@@ -393,12 +371,12 @@ const AccountCreationStep = ({
             placeholder="********"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            className="border-gray-300 focus:border-black font-light"
+            className="text-white border-gray-800 focus:border-white font-light"
           />
         </div>
 
-        <div className="space-y-2">
-          <Label htmlFor="confirmPassword" className="font-light tracking-wide">
+        <div className="text-white space-y-2">
+          <Label htmlFor="confirmPassword" className="text-white font-light tracking-wide text-md">
             Confirmer le mot de passe *
           </Label>
           <Input
@@ -407,28 +385,56 @@ const AccountCreationStep = ({
             placeholder="********"
             value={confirmPassword}
             onChange={(e) => setConfirmPassword(e.target.value)}
-            className="border-gray-300 focus:border-black font-light"
+            className="text-white border-gray-800 focus:border-white font-light"
           />
         </div>
 
-        <div className="flex gap-3 pt-4">
+        <div className="text-white flex gap-3 pt-4">
           <Button
             type="button"
             onClick={onPrev}
             variant="outline"
-            className="flex-1 font-light tracking-[0.1em] uppercase py-3"
+            className="text-black flex-1 bg-white/95 hover:bg-gray-200 font-light tracking-[0.1em] uppercase py-3"
           >
-            <ChevronLeft className="mr-2 h-4 w-4" /> Précédent
+            <ChevronLeft className="text-black mr-2 h-4 w-4" /> Précédent
           </Button>
           <Button
             type="submit"
             disabled={!isValid() || isLoading}
-            className="flex-1 bg-black text-white hover:bg-gray-800 font-light tracking-[0.1em] uppercase py-3 disabled:bg-gray-300"
+            className="text-black flex-1 bg-white/95 hover:bg-gray-200 font-light tracking-[0.1em] uppercase py-3 disabled:bg-gray-200"
           >
             {isLoading ? "Création..." : "Créer le compte"}
           </Button>
         </div>
       </form>
+    </div>
+  )
+}
+
+// Step indicator component
+const StepIndicator = ({ currentStep, totalSteps }: any) => {
+  return (
+    <div className="flex items-center justify-center space-x-2 mb-10 w-full">
+      {Array.from({ length: totalSteps }, (_, i) => (
+        <div key={i} className="flex items-center">
+          <div
+            className={`w-10 h-10 rounded-full flex items-center justify-center font-medium transition-all duration-300 ${
+              i + 1 <= currentStep
+                ? 'bg-white/95 text-black shadow-lg'
+                : 'bg-gray-400 text-gray-500'
+            }`}
+          >
+            {i + 1}
+          </div>
+          {i < totalSteps - 1 && (
+            <div
+              className={`w-32 h-0.5 mx-2 transition-all duration-300 ${
+                i + 1 < currentStep ? 'bg-white/95 text-black' : 'bg-gray-400'
+              }`}
+            />
+          )}
+        </div>
+      ))}
     </div>
   )
 }
@@ -478,7 +484,8 @@ const SignupForm = ({ onError, onSignup }: any) => {
   const prevStep = () => setCurrentStep(prev => Math.max(prev - 1, 1))
 
   return (
-    <div className="mt-6">
+    <div className="text-white mt-6">
+      {/* <StepIndicator currentStep={currentStep} totalSteps={3}/> */}
       {currentStep === 1 && (
         <RoleSelectionStep
           role={role}
@@ -533,13 +540,12 @@ export default function Authentication() {
     {
       email: "test@example.com",
       password: "password123",
-      role: "creator", // ou "createur" selon ta logique
+      role: "creator",
     },
   ])
 
   // Ajout d'un nouvel utilisateur
   const handleSignup = (newUser: any) => {
-    // Vérifie si l'email existe déjà
     if (users.some((u) => u.email === newUser.email)) {
       setError("Cet email est déjà utilisé.")
       return
@@ -549,36 +555,107 @@ export default function Authentication() {
   }
 
   return (
-    <div className="min-h-screen bg-white text-black pt-20">
-      <Header />
-      <section className="flex items-center justify-center py-24">
-        <Card className="w-full max-w-md mx-auto">
-          <CardHeader>
-            <CardTitle className="text-3xl font-extralight tracking-[0.1em] serif-font text-center">
-              Identification
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <Tabs defaultValue="login" className="w-full">
-              <TabsList className="grid w-full grid-cols-2">
-                <TabsTrigger className="font-thin" value="login">Connexion</TabsTrigger>
-                <TabsTrigger className="font-thin" value="signup">Inscription</TabsTrigger>
-              </TabsList>
-              
-              <TabsContent value="login">
-                <LoginForm onError={setError} users={users} />
-              </TabsContent>
-              
-              <TabsContent value="signup">
-                <SignupForm onError={setError} onSignup={handleSignup} />
-              </TabsContent>
-            </Tabs>
+    <div className="text-white min-h-screen bg-gradient-to-r from-black/90 to-black">
+      {/* Background Pattern */}
+      <div className="text-white relative z-10 min-h-screen grid lg:grid-cols-2">
+        {/* Left Side - Hero Section */}
+        <div className="hidden lg:flex flex-col justify-center items-center p-12 bg-white/95 relative overflow-hidden">
+          {/* Animated Background Elements */}
+          <Image
+            src="/img/login2.png"
+            alt="Login Fashion"
+            fill
+            className="object-cover"
+            priority
+          />
+        </div>
+
+        {/* Right Side - Authentication Forms */}
+        <div className="relative text-white flex flex-col md:h-screen overflow-y-scroll md:py-14 items-center justify-between">
+          <Link className="text-white mt-20 z-10 absolute -top-14 md:-top-1 left-0" href="/">
+            <Button
+              size="lg"
+              className="bg-gray-800 hover:bg-gray-900 focus:ring-gray-700"
+            >
+              <ArrowLeft className="text-white h-20 w-20" />
+            </Button>
+          </Link>
+          <div className="text-white w-full max-w-lg">
+            <Card className="text-white border-0 bg-transparent overflow-hidden pt-2 md:pt-1">
+              <CardHeader className="text-white text-center pb-2">
+                <div className="w-full flex justify-center pb-5">
+                  <Link href="/" className="text-2xl font-light tracking-[0.2em] serif-font z-10">
+                    <Handshake size={32} color="white" />
+                  </Link>
+                </div>
+                <CardTitle className="text-white text-4xl md:text-4xl font-extralight tracking-[0.2em] font-serif">
+                  Rejoignez-nous
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="text-white px-12 py-2">
+                <Tabs defaultValue="login" className="text-white w-full">
+                  <TabsList className="text-white grid w-full grid-cols-2 p-1 mb-8">
+                    <TabsTrigger 
+                      value="login" 
+                      className="
+                      text-white font-2xl font-extralight tracking-[0.2em] py-5 data-[state=active]:border-b data-[state=active]:border-white/80 transition-all duration-200"
+                    >
+                      CONNEXION
+                    </TabsTrigger>
+                    <TabsTrigger 
+                      value="signup"
+                      className="text-white font-5xl font-extralight tracking-[0.2em] py-5 data-[state=active]:border-b data-[state=active]:border-white/80 transition-all duration-200"
+                    >
+                      INSCRIPTION
+                    </TabsTrigger>
+                  </TabsList>
+                  
+                  <TabsContent value="login" className="text-white my-16">
+                    <LoginForm onError={setError} users={users} />
+                  </TabsContent>
+                  
+                  <TabsContent value="signup" className="text-white my-16">
+                    <SignupForm onError={setError} onSignup={handleSignup} />
+                  </TabsContent>
+                </Tabs>
+                
+                {error && (
+                  <div className="text-white mt-6 p-4 bg-red-50 border border-red-200 rounded-xl">
+                    <p className="text-red-600 text-sm text-center font-lg">{error}</p>
+                  </div>
+                )}
+              </CardContent>
+            </Card>
+          </div>
+        
+          <div className="space-x-10">
+            <SocialButton 
+              provider="facebook" 
+              variant="login" 
+              onClick={()=>{}} 
+            />
             
-            {error && <p className="text-red-500 text-sm text-center mt-4">{error}</p>}
-          </CardContent>
-        </Card>
-      </section>
-      <Footer />
+            <SocialButton 
+              provider="google" 
+              variant="login" 
+              onClick={()=>{}} 
+            />
+            
+            <SocialButton 
+              provider="other" 
+              variant="login" 
+              onClick={()=>{}} 
+            />
+          </div>
+
+        </div>
+      </div>
+
+      {/* Floating Elements for Mobile */}
+      <div className="text-white lg:hidden fixed inset-0 pointer-events-none overflow-hidden">
+        <div className="text-white absolute top-1/4 right-4 w-16 h-16 bg-gray-200/30 rounded-full blur-xl animate-pulse delay-1000"></div>
+        <div className="text-white absolute bottom-1/4 left-4 w-12 h-12 bg-gray-200/30 rounded-full blur-xl animate-pulse delay-2000"></div>
+      </div>
     </div>
   )
 }

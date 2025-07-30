@@ -84,7 +84,7 @@ export function HeaderDesktop() {
             <select
               value={lang}
               onChange={e => setLang(e.target.value)}
-              className="px-2 py-1 text-xs font-light bg-transparent"
+              className="px-2 py-1 text-xs bg-transparent"
               aria-label="Choix de la langue"
             >
               <option value="fr">FR</option>
@@ -140,7 +140,7 @@ export function HeaderMobile() {
           <select
             value={lang}
             onChange={e => setLang(e.target.value)}
-            className="px-2 py-1 text-xs font-light bg-white"
+            className="px-2 py-1 text-xs bg-white"
             aria-label="Choix de la langue"
           >
             <option value="fr">FR</option>

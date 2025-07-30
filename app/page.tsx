@@ -54,7 +54,7 @@ export default function HajAinaFashion() {
   const collections = [
     {
       id: "1", // Added ID for linking
-      title: "Collection Ete 2024",
+      title: "Collection Eté 2024",
       designer: "Miora Rasoanaivo",
       image: "/img/Collection3.jpg",
       category: "Couture",

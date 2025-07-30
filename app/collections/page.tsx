@@ -17,7 +17,7 @@ export default function CollectionsPage() {
   const collections = [
     {
       id: "1",
-      title: "Collection Ete 2024",
+      title: "Collection Eté 2024",
       designer: "Miora Rasoanaivo",
       image: "/img/Collection3.jpg",
       category: "Couture",

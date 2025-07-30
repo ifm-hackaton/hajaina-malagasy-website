@@ -37,7 +37,7 @@ export default function StylisteProfilePage() {
         email: "contact@mioracouture.mg",
         featuredCollections: [
           {
-            title: "Collection Ete 2024",
+            title: "Collection Eté 2024",
             image: "/placeholder.svg?height=400&width=300&text=Miora+Autumn+Collection",
             link: "/collections/1",
           },
