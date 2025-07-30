@@ -9,11 +9,12 @@ import { Label } from "@/components/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { ArrowLeft, ChevronLeft, ChevronRight, Handshake, Sparkles } from "lucide-react"
+import { ArrowLeft, ChevronLeft, ChevronRight, Handshake } from "lucide-react"
 import { useRouter } from "next/navigation"
 import Image from "next/image"
 import Link from "next/link"
 import SocialButton from "@/components/ui/social-button"
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
 
 // Login Component
 const LoginForm = ({ onError, users }: any) => {
@@ -438,7 +439,6 @@ const StepIndicator = ({ currentStep, totalSteps }: any) => {
     </div>
   )
 }
-
 // Multi-step Signup Component
 const SignupForm = ({ onError, onSignup }: any) => {
   const [currentStep, setCurrentStep] = useState(1)
@@ -475,8 +475,6 @@ const SignupForm = ({ onError, onSignup }: any) => {
         password,
         role,
       })
-      alert("Inscription réussie ! Vous pouvez maintenant vous connecter.")
-      // Reset form or redirect
     }, 2000)
   }
 
@@ -486,6 +484,7 @@ const SignupForm = ({ onError, onSignup }: any) => {
   return (
     <div className="text-white mt-6">
       {/* <StepIndicator currentStep={currentStep} totalSteps={3}/> */}
+
       {currentStep === 1 && (
         <RoleSelectionStep
           role={role}
@@ -534,6 +533,7 @@ const SignupForm = ({ onError, onSignup }: any) => {
 // Main Authentication Component
 export default function Authentication() {
   const [error, setError] = useState("")
+  const [showSuccessAlert, setShowSuccessAlert] = useState(false)
 
   // State pour les users
   const [users, setUsers] = useState([
@@ -552,6 +552,10 @@ export default function Authentication() {
     }
     setUsers((prev) => [...prev, newUser])
     setError("")
+    setShowSuccessAlert(true)
+    setTimeout(() => {
+      setShowSuccessAlert(false)
+    }, 5000)
   }
 
   return (
@@ -572,7 +576,15 @@ export default function Authentication() {
 
         {/* Right Side - Authentication Forms */}
         <div className="relative text-white flex flex-col md:h-screen overflow-y-scroll md:py-14 items-center justify-between">
-          <Link className="text-white mt-20 z-10 absolute -top-14 md:-top-1 left-0" href="/">
+          {showSuccessAlert && (
+            <Alert className="fixed mx-5 bottom-6 md:right-0 max-w-fit bg-gray-800 shadow-lg shadow-black border-0 animate-fade-in duration-75 z-10">
+              <AlertTitle>Inscription réussie ! ✨</AlertTitle>
+              <AlertDescription>
+                Vous pouvez maintenant vous connecter.
+              </AlertDescription>
+            </Alert>
+          )}
+          <Link className="text-white mt-20 absolute -top-14 md:-top-1 left-0" href="/">
             <Button
               size="lg"
               className="bg-gray-800 hover:bg-gray-900 focus:ring-gray-700"
@@ -629,23 +641,9 @@ export default function Authentication() {
           </div>
         
           <div className="space-x-10">
-            <SocialButton 
-              provider="facebook" 
-              variant="login" 
-              onClick={()=>{}} 
-            />
-            
-            <SocialButton 
-              provider="google" 
-              variant="login" 
-              onClick={()=>{}} 
-            />
-            
-            <SocialButton 
-              provider="other" 
-              variant="login" 
-              onClick={()=>{}} 
-            />
+            <SocialButton provider="facebook" variant="login" onClick={()=>{}}/>
+            <SocialButton provider="google" variant="login" onClick={()=>{}} />
+            <SocialButton provider="other" variant="login" onClick={()=>{}} />
           </div>
 
         </div>
