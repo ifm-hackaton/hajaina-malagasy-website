@@ -49,7 +49,7 @@ export function HeaderDesktop() {
 
   return (
     <header
-      className={`header hidden md:block fixed top-0 w-full bg-white/95 backdrop-blur-sm z-50 border-b border-gray-100 ${
+      className={`header invisible hidden md:block fixed top-0 w-full bg-white/95 backdrop-blur-sm z-50 border-b border-gray-100 ${
         shouldInvert ? "invert" : ""
       }`}
     >
@@ -128,7 +128,7 @@ export function HeaderMobile() {
 
   return (
     <header
-      className={`header block md:hidden fixed top-0 w-full z-50 border-b border-gray-100 ${
+      className={`header invisible block md:hidden fixed top-0 w-full z-50 border-b border-gray-100 ${
         shouldInvert ? "invert bg-white backdrop-blur-sm" : "bg-white backdrop-blur-sm"
       }`}
     >
@@ -212,7 +212,7 @@ export function HeaderMobile() {
 }
 
 export default function Header() {
-  // useAnimation(["header"]);
+  useAnimation(["header"]);
 
   return (
     <>

@@ -16,7 +16,7 @@ import { useAnimation } from "@/animations"
 
 export default function HajAinaFashion() {
   useAnimation([
-    // "heroSection",
+    "heroSection",
     // "collectionSection",
     // "designersSection",
     // "collaborationsSection",
@@ -118,13 +118,13 @@ export default function HajAinaFashion() {
       <Header />
 
       {/* Custom Cursor */}
-      {/* <CustomCursor /> */}
+      <CustomCursor />
 
       {/* Hero Section */}
-      <section className="relative min-h-[900px] py-10 flex items-center justify-center overflow-hidden bg-[#0b0b0b]">
+      <section className="relative min-h-[115vh] py-10 flex items-center justify-center overflow-hidden bg-[#0b0b0b]">
         {/* Hero Image Left */}
         <div className="absolute inset-0 md:inset-y-0 md:left-0 md:w-[45%] h-full z-10 overflow-hidden">
-          <div className="hero-image relative w-full h-full">
+          <div className="hero-image invisible relative w-full h-full">
             <Image
               src="/img/hero-image.jpg"
               alt="Hero Fashion"
@@ -138,37 +138,37 @@ export default function HajAinaFashion() {
 
         {/* Hero Text Content */}
         <div className="relative z-20 text-white px-6 md:px-12 lg:px-20 max-w-3xl md:ml-[45%] text-center md:text-left md:-translate-y-5">
-          <h1 className="hero-title text-4xl sm:text-5xl md:text-8xl font-extralight tracking-[0.2em] mb-10 serif-font">
+          <h1 className="hero-title invisible text-4xl sm:text-5xl md:text-8xl font-extralight tracking-[0.2em] mb-10 serif-font">
             HAJ'AINA
           </h1>
-          <div className="hero-subtext flex items-center mb-10 gap-3">
+          <div className="hero-subtext invisible flex items-center mb-10 gap-3">
             <p className="text-lg md:text-lg font-light tracking-[0.05em] opacity-90">
               Mihaja, Manaja Aina, Manaja Tantara
             </p> 
             <Image src="/img/madagascar.png" alt="" width="20" height="0" className="mt-1"/>
           </div>
-          <p className="hero-description text-base md:text-lg mb-10 leading-relaxed font-light opacity-80 text-justify">
-            Haj'Aina façonne l'histoire de la mode éthique et durable à Madagascar avec ses plus grands acteurs.
+          <p className="hero-description invisible text-base md:text-lg mb-10 leading-relaxed font-light opacity-80 text-justify">
+            Haj'Aina façonne l'histoire de la mode éthique et durable à Madagascar aux côtés de ses plus grands acteurs.
             Rejoignez-nous et participez vous aussi à cette démarche quotidienne vers une mode plus responsable.
           </p>
           <Link href="/collections">
             <Button
               size="lg"
-              className="hero-button bg-green-600 text-black hover:bg-green-500 text-xs tracking-[0.15em] px-8 py-4 font-normal uppercase"
+              className="hero-button invisible bg-green-600 text-black hover:bg-green-500 text-xs tracking-[0.15em] px-8 py-4 font-normal uppercase"
             >
               Explorer les Collections
               <ArrowRight className="ml-3 h-4 w-4" />
             </Button>
           </Link>
         </div>
-        {/* <Image
+        <Image
           src="/logo-med.jpg"
           alt="Hero Fashion"
           width={500}
           height={500}
-          className="main-logo absolute left-[50%] top-[42%] -translate-x-[50%] -translate-y-[50%] object-cover mb-10"
+          className="main-logo invisible absolute left-[50%] top-[42%] -translate-x-[50%] -translate-y-[50%] object-cover mb-10"
           priority
-        /> */}
+        />
       </section>
 
       {/* Marquee section*/}
