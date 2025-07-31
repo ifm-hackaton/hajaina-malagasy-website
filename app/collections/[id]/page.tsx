@@ -25,7 +25,7 @@ export default function CollectionDetailPage() {
         title: "Collection Eté 2024",
         designer: "Miora Rasoanaivo",
         image:
-          "/img/collection3.jpg",
+          "/img/Collection3.jpg",
         category: "Couture",
         price: "150 000 Ar",
         description:
@@ -38,16 +38,16 @@ export default function CollectionDetailPage() {
           "Tailles disponibles : XS, S, M, L, XL",
         ],
         gallery: [
-          "/img/collection3.jpg",
-          "/img/collection3.jpg",
-          "/img/collection3.jpg",
+          "/img/Collection3.jpg",
+          "/img/Collection3.jpg",
+          "/img/Collection3.jpg",
         ],
       },
       {
         id: "2",
         title: "Eco-Luxe Series",
         designer: "Hery Andriantsoa",
-        image: "/img/collection1.jpg",
+        image: "/img/Collection1.jpg",
         category: "Durable",
         price: "200 000 Ar",
         description:
@@ -60,16 +60,16 @@ export default function CollectionDetailPage() {
           "Certifications : B-Corp, Fair Trade",
         ],
         gallery: [
-          "/img/collection1.jpg",
-          "/img/collection1.jpg",
-          "/img/collection1.jpg",
+          "/img/Collection1.jpg",
+          "/img/Collection1.jpg",
+          "/img/Collection1.jpg",
         ],
       },
       {
         id: "3",
         title: "Urban Malagasy",
         designer: "Lalaina Rakoto",
-        image: "/img/collection2.jpg",
+        image: "/img/Collection2.jpg",
         category: "Streetwear",
         price: "80 000 Ar",
         description:
@@ -82,16 +82,16 @@ export default function CollectionDetailPage() {
           "Accessoires : Sacs banane, casquettes brodées",
         ],
         gallery: [
-          "/img/collection2.jpg",
-          "/img/collection2.jpg",
-          "/img/collection2.jpg",
+          "/img/Collection2.jpg",
+          "/img/Collection2.jpg",
+          "/img/Collection2.jpg",
         ],
       },
       {
         id: "4",
         title: "Heritage Moderne",
         designer: "Miora Rasoanaivo",
-        image: "/img/collection4.jpg",
+        image: "/img/Collection4.jpg",
         category: "Fusion",
         price: "180 000 Ar",
         description:
@@ -104,16 +104,16 @@ export default function CollectionDetailPage() {
           "Pièces clés : Vestes structurées, jupes longues",
         ],
         gallery: [
-          "/img/collection4.jpg",
-          "/img/collection4.jpg",
-          "/img/collection4.jpg",
+          "/img/Collection4.jpg",
+          "/img/Collection4.jpg",
+          "/img/Collection4.jpg",
         ],
       },
       {
         id: "5",
         title: "Soie Sauvage",
         designer: "Hery Andriantsoa",
-        image: "/img/collection5.jpg",
+        image: "/img/Collection5.jpg",
         category: "Couture",
         price: "300 000 Ar",
         description:
@@ -126,16 +126,16 @@ export default function CollectionDetailPage() {
           "Disponibilité : Édition limitée",
         ],
         gallery: [
-          "/img/collection5.jpg",
-          "/img/collection5.jpg",
-          "/img/collection5.jpg",
+          "/img/Collection5.jpg",
+          "/img/Collection5.jpg",
+          "/img/Collection5.jpg",
         ],
       },
       {
         id: "6",
         title: "Nouvelle Vague",
         designer: "Lalaina Rakoto",
-        image: "/img/collection6.jpg",
+        image: "/img/Collection6.jpg",
         category: "Avant-garde",
         price: "250 000 Ar",
         description:
@@ -148,9 +148,9 @@ export default function CollectionDetailPage() {
           "Pièces uniques : Sculptures portables",
         ],
         gallery: [
-          "/img/collection6.jpg",
-          "/img/collection6.jpg",
-          "/img/collection6.jpg",
+          "/img/Collection6.jpg",
+          "/img/Collection6.jpg",
+          "/img/Collection6.jpg",
         ],
       },
     ]
