@@ -118,7 +118,7 @@ export default function HajAinaFashion() {
       <Header />
 
       {/* Custom Cursor */}
-      <CustomCursor />
+      {/* <CustomCursor /> */}
 
       {/* Hero Section */}
       <section className="relative min-h-[900px] py-10 flex items-center justify-center overflow-hidden bg-[#0b0b0b]">
