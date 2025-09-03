@@ -1,31 +1,30 @@
-"use client"
+"use client";
 
-import { useEffect, useState } from "react"
-import { useParams, useRouter } from "next/navigation"
-import { Button } from "@/components/ui/button"
-import { ManajaButton } from "@/components/ui/manaja-button"
-import { Badge } from "@/components/ui/badge"
-import { ArrowLeft, ShoppingCart } from "lucide-react"
-import Image from "next/image"
-import Header from "@/components/header"
-import Footer from "@/components/footer" // Added import
+import { useEffect, useState } from "react";
+import { useParams, useRouter } from "next/navigation";
+import { Button } from "@/components/ui/button";
+import { ManajaButton } from "@/components/ui/manaja-button";
+import { Badge } from "@/components/ui/badge";
+import { ArrowLeft, ShoppingCart } from "lucide-react";
+import Image from "next/image";
+import Header from "@/components/header";
+import Footer from "@/components/footer"; // Added import
 
 export default function CollectionDetailPage() {
-  const { id } = useParams()
-  const router = useRouter()
-  const [collection, setCollection] = useState<any>(null)
-  const [loading, setLoading] = useState(true)
+  const { id } = useParams();
+  const router = useRouter();
+  const [collection, setCollection] = useState<any>(null);
+  const [loading, setLoading] = useState(true);
 
   // Simulate fetching collection data
   useEffect(() => {
-    setLoading(true)
+    setLoading(true);
     const allCollections = [
       {
         id: "1",
         title: "Collection Eté 2024",
         designer: "Miora Rasoanaivo",
-        image:
-          "/img/Collection3.jpg",
+        image: "/img/Collection3.jpg",
         category: "Couture",
         price: "150 000 Ar",
         description:
@@ -153,26 +152,26 @@ export default function CollectionDetailPage() {
           "/img/Collection6.jpg",
         ],
       },
-    ]
-    const foundCollection = allCollections.find((col) => col.id === id)
+    ];
+    const foundCollection = allCollections.find((col) => col.id === id);
     if (foundCollection) {
-      setCollection(foundCollection)
+      setCollection(foundCollection);
     } else {
-      router.push("/collections") // Redirect if not found
+      router.push("/collections"); // Redirect if not found
     }
-    setLoading(false)
-  }, [id, router])
+    setLoading(false);
+  }, [id, router]);
 
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-white text-black">
         <p>Chargement de la collection...</p>
       </div>
-    )
+    );
   }
 
   if (!collection) {
-    return null // Should redirect by now
+    return null; // Should redirect by now
   }
 
   return (
@@ -201,7 +200,10 @@ export default function CollectionDetailPage() {
               </div>
               <div className="grid grid-cols-3 gap-4">
                 {collection.gallery.map((img: string, index: number) => (
-                  <div key={index} className="relative h-32 overflow-hidden rounded-lg">
+                  <div
+                    key={index}
+                    className="relative h-32 overflow-hidden rounded-lg"
+                  >
                     <Image
                       src={img || "/placeholder.svg"}
                       alt={`${collection.title} gallery ${index + 1}`}
@@ -214,15 +216,26 @@ export default function CollectionDetailPage() {
             </div>
 
             <div className="space-y-8">
-              <Badge variant="outline" className="text-sm tracking-[0.15em] font-light uppercase">
+              <Badge
+                variant="outline"
+                className="text-sm tracking-[0.15em] font-light uppercase"
+              >
                 {collection.category}
               </Badge>
-              <h1 className="text-5xl font-extralight tracking-[0.1em] serif-font leading-tight">{collection.title}</h1>
-              <p className="text-gray-600 text-xl font-light tracking-wide">Par {collection.designer}</p>
-              <p className="text-gray-700 leading-relaxed font-light text-lg">{collection.description}</p>
+              <h1 className="text-5xl font-extralight tracking-[0.1em] serif-font leading-tight">
+                {collection.title}
+              </h1>
+              <p className="text-gray-600 text-xl font-light tracking-wide">
+                Par {collection.designer}
+              </p>
+              <p className="text-gray-700 leading-relaxed font-light text-lg">
+                {collection.description}
+              </p>
 
               <div className="space-y-4">
-                <h2 className="text-2xl font-light serif-font">Détails de la Collection</h2>
+                <h2 className="text-2xl font-light serif-font">
+                  Détails de la Collection
+                </h2>
                 <ul className="list-disc list-inside text-gray-700 font-light space-y-2">
                   {collection.details.map((detail: string, index: number) => (
                     <li key={index}>{detail}</li>
@@ -231,13 +244,15 @@ export default function CollectionDetailPage() {
               </div>
 
               <div className="flex items-center justify-between border-t border-b border-gray-200 py-6">
-                <span className="text-3xl font-bold serif-font">{collection.price}</span>
+                <span className="text-3xl font-bold serif-font">
+                  {collection.price}
+                </span>
                 <div className="flex gap-4">
                   <Button className="bg-black text-white hover:bg-gray-800 font-light tracking-[0.1em] uppercase px-8 py-3">
                     <ShoppingCart className="mr-2 h-4 w-4" />
                     Ajouter au panier
                   </Button>
-                  <ManajaButton/>
+                  <ManajaButton />
                 </div>
               </div>
             </div>
@@ -246,5 +261,5 @@ export default function CollectionDetailPage() {
       </section>
       <Footer /> {/* Added Footer */}
     </div>
-  )
+  );
 }
