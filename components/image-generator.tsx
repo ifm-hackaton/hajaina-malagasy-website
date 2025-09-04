@@ -22,12 +22,11 @@ export default function ImageGenerator() {
       console.log("Response:", data);
 
       // Récupérer le contenu
-      const content = data?.choices?.[0]?.message?.content;
-
       // Chercher l'image
-      const imageUrl = data?.choices?.[0]?.message?.images?.[0]?.image_url;
+      const imageUrlObj = data?.choices?.[0]?.message?.images?.[0]?.image_url;
+      const imageUrl = imageUrlObj?.url;
 
-      if (imageUrl) {
+      if (typeof imageUrl === "string") {
         setImage(imageUrl);
       } else {
         console.warn("Aucune image trouvée dans la réponse.");

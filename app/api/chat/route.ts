@@ -7,9 +7,9 @@ export async function POST(req: Request) {
     const res = await fetch("https://openrouter.ai/api/v1/chat/completions", {
       method: "POST",
       headers: {
-        Authorization: `Bearer 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`,
+        Authorization: `Bearer ${process.env.OPENROUTER_API_KEY!}`, // ✅ utilise une variable d’env
         "Content-Type": "application/json",
-        "HTTP-Referer": "http://localhost:3000", // Mets ton URL prod ici
+        "HTTP-Referer": "http://localhost:3000", // change en prod
         "X-Title": "MonAppNextJS",
       },
       body: JSON.stringify({
@@ -33,10 +33,22 @@ export async function POST(req: Request) {
       }),
     });
 
-    const data = await res.json();
+    // ✅ Sécurité : si pas de JSON valide
+    const text = await res.text();
+    if (!res.ok) {
+      throw new Error(`Erreur API OpenRouter (${res.status}): ${text}`);
+    }
+
+    let data;
+    try {
+      data = JSON.parse(text);
+    } catch (e) {
+      throw new Error("Réponse invalide de l'API OpenRouter: " + text);
+    }
+
     return NextResponse.json(data);
   } catch (error: any) {
-    console.error(error);
+    console.error("Erreur backend:", error);
     return NextResponse.json({ error: error.message }, { status: 500 });
   }
 }
