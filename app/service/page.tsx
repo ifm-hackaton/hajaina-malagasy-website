@@ -1,16 +1,29 @@
 "use client";
 
+import { useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Plus, Edit, Trash, ArrowLeft } from "lucide-react";
+import { Plus, Edit, Trash, ArrowLeft, ArrowRight } from "lucide-react";
 import Header from "@/components/header";
 import { useRouter } from "next/navigation";
 import Footer from "@/components/footer";
 
 export default function MyServicesPage() {
   const router = useRouter();
+  const carouselsRef = useRef<{ [key: number]: HTMLDivElement | null }>({});
+
+  const scroll = (id: number, direction: "left" | "right") => {
+    const container = carouselsRef.current[id];
+    if (container) {
+      const scrollAmount = container.clientWidth; // une image à la fois
+      container.scrollBy({
+        left: direction === "left" ? -scrollAmount : scrollAmount,
+        behavior: "smooth",
+      });
+    }
+  };
 
   // Exemple de services existants
   const services = [
@@ -19,12 +32,22 @@ export default function MyServicesPage() {
       title: "Conseil en stylisme éthique",
       description:
         "Accompagnement personnalisé pour créer une garde-robe responsable et stylée avec des pièces durables.",
+      images: [
+        "service/stylisme1.jpeg",
+        "service/stylisme2.jpeg",
+        "service/stylisme3.jpeg",
+      ],
     },
     {
       id: 2,
       title: "Upcycling & Personnalisation",
       description:
         "Transformez vos anciens vêtements en pièces uniques grâce à des techniques d’upcycling et de customisation.",
+      images: [
+        "service/style1.jpeg",
+        "service/style2.jpeg",
+        "service/style3.jpeg",
+      ],
     },
   ];
 
@@ -64,7 +87,7 @@ export default function MyServicesPage() {
           </div>
 
           {/* Liste des services */}
-          <div className="space-y-8">
+          <div className="space-y-16">
             {services.map((service) => (
               <Card
                 key={service.id}
@@ -96,9 +119,50 @@ export default function MyServicesPage() {
                       </Button>
                     </div>
                   </div>
+
                   <p className="text-gray-700 leading-relaxed font-light line-clamp-3">
                     {service.description}
                   </p>
+
+                  {/* Carousel d'images */}
+                  <div className="mt-6 relative">
+                    <h3 className="text-lg font-light mb-3 tracking-wide text-gray-800">
+                      Galerie
+                    </h3>
+
+                    {/* Boutons gauche/droite */}
+                    <button
+                      onClick={() => scroll(service.id, "left")}
+                      className="absolute left-0 top-1/2 -translate-y-1/2 z-10 p-2 bg-white rounded-full shadow hover:bg-gray-100"
+                    >
+                      <ArrowLeft className="h-6 w-6" />
+                    </button>
+                    <button
+                      onClick={() => scroll(service.id, "right")}
+                      className="absolute right-0 top-1/2 -translate-y-1/2 z-10 p-2 bg-white rounded-full shadow hover:bg-gray-100"
+                    >
+                      <ArrowRight className="h-6 w-6" />
+                    </button>
+
+                    {/* Carousel horizontal “image par image” */}
+                    <div
+                      ref={(el) => (carouselsRef.current[service.id] = el)}
+                      className="flex overflow-x-hidden scroll-snap-x snap-mandatory"
+                    >
+                      {service.images.map((img, index) => (
+                        <div
+                          key={index}
+                          className="flex-shrink-0 w-full h-[350px] rounded-lg overflow-hidden shadow snap-start flex justify-center items-center"
+                        >
+                          <img
+                            src={img}
+                            alt={`${service.title} ${index + 1}`}
+                            className="w-auto h-[350px] object-cover rounded-lg"
+                          />
+                        </div>
+                      ))}
+                    </div>
+                  </div>
                 </CardContent>
               </Card>
             ))}
