@@ -274,11 +274,12 @@ header.invert a, header.invert button {
 
 /* Scan Animation */
 .scanner {
-  animation: scan-animation 3s infinite ease-in-out;
+  /* animation: scan-animation 3s infinite ease-in-out; */
+  top: 35%;
 }
 
 .scanned-image {
-  animation: height-animation 3s infinite ease-in-out;
+  /* animation: height-animation 3s infinite ease-in-out; */
   background-image: url('/img/Collection1.jpg');
   background-size: cover;
   background-position: center top;
@@ -288,10 +289,12 @@ header.invert a, header.invert button {
   top: 0;
   transform: translateX(-50%);
   width: 80%;
+  height: 35%;
+  filter: brightness(0.9);
 }
 
 .qrcode-frame {
-  animation: height-animation-reverse 3s infinite ease-in-out;
+  /* animation: height-animation-reverse 3s infinite ease-in-out; */
   background-image: url('/img/frame.png');
   background-size: cover;
   background-position: center bottom;
@@ -301,6 +304,7 @@ header.invert a, header.invert button {
   bottom: 0;
   transform: translateX(-50%);
   width: 80%;
+  height: 65%;
 }
 
 @keyframes scan-animation {

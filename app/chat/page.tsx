@@ -6,11 +6,7 @@ import { Button } from "@/components/ui/button"
 import { Send, Image as ImageIcon, Camera, Loader2, X, ArrowLeft } from "lucide-react"
 import Image from "next/image"
 import Header from "@/components/header"
-import { GoogleGenerativeAI } from "@google/generative-ai"
 import Link from "next/link"
-
-// Initialize Google Gemini AI
-const genAI = new GoogleGenerativeAI(process.env.NEXT_PUBLIC_GEMINI_API_KEY || "");
 
 interface Message {
   role: "user" | "assistant";
@@ -75,34 +71,30 @@ export default function ChatPage() {
       setImageFile(null);
       setImagePreview(null);
 
-      // Configure Gemini AI model
-      const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
+      const response = await fetch('/api/live-edit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          text: input,
+          imageData: imagePreview ? imagePreview.split(',')[1] : undefined,
+        }),
+      });
 
-      // Prepare the prompt
-      let prompt = "Tu es un expert en mode et stylisme. ";
-      if (imagePreview) {
-        prompt += "Modifie l'image selon les demandes de l'utilisateur en utilisant nano banana et renvoie la nouvelle image";
+      if (!response.ok) {
+        throw new Error('API request failed');
       }
-      prompt += input || "Que peux-tu dire sur ce style vestimentaire ?";
 
-      // Generate content with Gemini
-      const result = await model.generateContent(
-        imagePreview ? [prompt, imagePreview] : [prompt]
-      );
-      const response = await result.response;
-      const text = response.text();
-      console.log(response)
+      const data = await response.json();
 
-      setMessages(prev => [...prev, {
-        role: "assistant",
-        content: text,
-      }]);
-    } catch (error) {
-      console.error("Error:", error);
-      setMessages(prev => [...prev, {
-        role: "assistant",
-        content: "Désolé, une erreur s'est produite. Veuillez réessayer.",
-      }]);
+      const assistantMessage: Message = {
+        role: 'assistant',
+        content: data.text,
+        image: data.image64 ? `data:image/png;base64,${data.image64}` : undefined,
+      };
+
+      setMessages(prev => [...prev, assistantMessage]);
     } finally {
       setLoading(false);
     }
